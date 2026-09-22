@@ -21,6 +21,7 @@
     ::-webkit-scrollbar-thumb{background:#555;border-radius:2px;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
     .fi{animation:fadeIn 0.25s ease}
+    .reduce-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     button{cursor:pointer}
     textarea{resize:vertical}
   </style>
@@ -691,2342 +692,129 @@ var DRINKS = [
     froth:null,
     size:"Cocktail",
     tags:["gluten-free"],
-  },,
-{
-  "id": "hazelnut-latte",
-  "name": "Hazelnut Latte",
-  "emoji": "🌰",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style hazelnut latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml hazelnut syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add hazelnut syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "maple-latte",
-  "name": "Maple Latte",
-  "emoji": "🍁",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style maple latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml pure maple syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add pure maple syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "honey-cinnamon-latte",
-  "name": "Honey Cinnamon Latte",
-  "emoji": "🍯",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style honey cinnamon latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml runny honey",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add runny honey to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "pistachio-latte",
-  "name": "Pistachio Latte",
-  "emoji": "💚",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style pistachio latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml pistachio syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add pistachio syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "biscoff-latte",
-  "name": "Biscoff Latte",
-  "emoji": "🍪",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style biscoff latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp smooth Biscoff spread",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add smooth Biscoff spread to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "nutella-latte",
-  "name": "Nutella Latte",
-  "emoji": "🍫",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style nutella latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp Nutella",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add Nutella to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "toffee-nut-latte",
-  "name": "Toffee Nut Latte",
-  "emoji": "🌰",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style toffee nut latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml toffee-nut syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add toffee-nut syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "gingerbread-latte",
-  "name": "Gingerbread Latte",
-  "emoji": "🫚",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style gingerbread latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml gingerbread syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add gingerbread syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "cinnamon-roll-latte",
-  "name": "Cinnamon Roll Latte",
-  "emoji": "🌀",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style cinnamon roll latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml cinnamon bun syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add cinnamon bun syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "white-chocolate-latte",
-  "name": "White Chocolate Latte",
-  "emoji": "🤍",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style white chocolate latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "20ml white chocolate sauce",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add white chocolate sauce to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "coconut-latte",
-  "name": "Coconut Latte",
-  "emoji": "🥥",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style coconut latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml coconut syrup",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Add coconut syrup to the serving cup.",
-    "Brew a double espresso directly over it and stir.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and start frothing.",
-    "Pour the textured milk over the espresso."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "hot"
-  ]
-},
-{
-  "id": "iced-vanilla-latte",
-  "name": "Iced Vanilla Latte",
-  "emoji": "🧊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced vanilla latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml vanilla syrup",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add vanilla syrup to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-caramel-latte",
-  "name": "Iced Caramel Latte",
-  "emoji": "🧊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced caramel latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml caramel syrup",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add caramel syrup to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-hazelnut-latte",
-  "name": "Iced Hazelnut Latte",
-  "emoji": "🌰",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced hazelnut latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml hazelnut syrup",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add hazelnut syrup to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-pistachio-latte",
-  "name": "Iced Pistachio Latte",
-  "emoji": "💚",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced pistachio latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml pistachio syrup",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add pistachio syrup to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-biscoff-latte",
-  "name": "Iced Biscoff Latte",
-  "emoji": "🍪",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced biscoff latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp smooth Biscoff spread",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add smooth Biscoff spread to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-nutella-latte",
-  "name": "Iced Nutella Latte",
-  "emoji": "🍫",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced nutella latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp Nutella",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add Nutella to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "iced-maple-latte",
-  "name": "Iced Maple Oat Latte",
-  "emoji": "🍁",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A café-style iced maple oat latte adapted for the Ninja Luxe Café.",
-  "ingredients": [
-    "Double espresso",
-    "15ml pure maple syrup",
-    "150ml cold milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add pure maple syrup to a tall glass.",
-    "Brew a double espresso and stir it into the flavouring.",
-    "Fill the glass generously with ice.",
-    "Add the cold milk and stir.",
-    "Finish with any optional topping."
-  ],
-  "tips": [
-    "Start with the lower syrup quantity and adjust next time to taste.",
-    "Barista Assist should determine grind size rather than copying another machine’s grind number."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "milk",
-    "flavoured",
-    "iced"
-  ]
-},
-{
-  "id": "brown-sugar-shaken",
-  "name": "Brown Sugar Shaken Espresso",
-  "emoji": "🧊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Espresso, brown sugar and cinnamon shaken over ice, finished with milk.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp soft brown sugar",
-    "Pinch ground cinnamon",
-    "150ml milk or oat drink",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add brown sugar to a heatproof cup.",
-    "Brew a double espresso over the sugar and stir until dissolved.",
-    "Add cinnamon and plenty of ice to a lidded shaker or jar.",
-    "Pour in the espresso and shake for 10–15 seconds.",
-    "Pour into a glass and top with milk."
-  ],
-  "tips": [
-    "For a colder, smoother variation use COLD-PRESSED instead of hot espresso.",
-    "Do not put cinnamon into the bean hopper."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or oat",
-  "coffeeIntensity": "Strong",
-  "sweetness": "Medium",
-  "texture": "Light",
-  "sourceType": "Community-inspired",
-  "tags": [
-    "iced",
-    "brown-sugar",
-    "cinnamon"
-  ]
-},
-{
-  "id": "vanilla-sweet-cream-cold-press",
-  "name": "Vanilla Sweet Cream Cold-Pressed",
-  "emoji": "❄️",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Cold-pressed espresso topped with silky vanilla sweet cream cold foam.",
-  "ingredients": [
-    "Cold-pressed espresso",
-    "Ice cubes",
-    "45ml double cream",
-    "45ml whole milk",
-    "10ml vanilla syrup"
-  ],
-  "machine": [
-    "Install the LUXE basket and select COLD-PRESSED.",
-    "Brew over a glass filled with ice.",
-    "Add cream, milk and vanilla syrup to the milk jug.",
-    "Select DAIRY and COLD FOAM, then start frothing.",
-    "Spoon or pour the vanilla foam over the coffee."
-  ],
-  "tips": [
-    "For a lighter foam, replace some cream with milk."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam",
-  "size": "10–12 oz",
-  "brewMode": "Cold-Pressed",
-  "brewStyle": "Cold-Pressed",
-  "basket": "Luxe",
-  "milkType": "Dairy",
-  "coffeeIntensity": "Strong",
-  "sweetness": "Medium",
-  "texture": "Foamy",
-  "sourceType": "Community-inspired",
-  "tags": [
-    "iced",
-    "cold-pressed",
-    "cold-foam",
-    "vanilla"
-  ]
-},
-{
-  "id": "salted-caramel-cold-foam",
-  "name": "Salted Caramel Cold Foam Coffee",
-  "emoji": "🧂",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Cold coffee with a sweet-salty caramel foam cap.",
-  "ingredients": [
-    "Cold brew or over-ice coffee",
-    "Ice cubes",
-    "60ml milk",
-    "30ml double cream",
-    "15ml caramel syrup",
-    "Small pinch sea salt"
-  ],
-  "machine": [
-    "Brew COLD BREW with the LUXE basket into a glass of ice.",
-    "Add milk, cream, caramel and salt to the milk jug.",
-    "Select DAIRY and COLD FOAM.",
-    "Froth, then spoon over the cold brew."
-  ],
-  "tips": [
-    "A tiny pinch of salt is enough; add more only after tasting."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam",
-  "size": "12 oz",
-  "brewMode": "Coffee",
-  "brewStyle": "Cold Brew",
-  "basket": "Luxe",
-  "milkType": "Dairy",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Foamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "cold-brew",
-    "caramel",
-    "cold-foam"
-  ]
-},
-{
-  "id": "chocolate-cream-cold-brew",
-  "name": "Chocolate Cream Cold Brew",
-  "emoji": "🍫",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Smooth cold brew topped with cocoa cold foam.",
-  "ingredients": [
-    "Cold brew coffee",
-    "Ice cubes",
-    "60ml milk",
-    "30ml double cream",
-    "10ml chocolate syrup or 1 tsp cocoa plus sugar"
-  ],
-  "machine": [
-    "Brew COLD BREW using the LUXE basket over ice.",
-    "Mix the foam ingredients in the milk jug.",
-    "Select DAIRY and COLD FOAM.",
-    "Pour the chocolate foam over the coffee."
-  ],
-  "tips": [
-    "Sift cocoa first if using powder to reduce lumps."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam",
-  "size": "12 oz",
-  "brewMode": "Coffee",
-  "brewStyle": "Cold Brew",
-  "basket": "Luxe",
-  "milkType": "Dairy",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Foamy",
-  "sourceType": "Coffee-shop inspired",
-  "tags": [
-    "iced",
-    "chocolate",
-    "cold-foam"
-  ]
-},
-{
-  "id": "vietnamese-iced-coffee",
-  "name": "Vietnamese-Style Iced Coffee",
-  "emoji": "🇻🇳",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A strong iced coffee sweetened with condensed milk.",
-  "ingredients": [
-    "Double espresso or 175ml RICH coffee",
-    "25–30ml sweetened condensed milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add condensed milk to the glass.",
-    "Brew a double espresso or small RICH coffee.",
-    "Stir thoroughly while hot.",
-    "Fill a second glass with ice and pour the coffee mixture over it."
-  ],
-  "tips": [
-    "Use less condensed milk for a more coffee-forward drink."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "iced",
-    "condensed-milk"
-  ]
-},
-{
-  "id": "cafe-bombon",
-  "name": "Café Bombón",
-  "emoji": "🇪🇸",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Spanish espresso layered with sweetened condensed milk.",
-  "ingredients": [
-    "Double espresso",
-    "30ml sweetened condensed milk"
-  ],
-  "machine": [
-    "Pour condensed milk into a small clear glass.",
-    "Brew a double espresso into a separate cup.",
-    "Slowly pour espresso over the condensed milk to create two layers.",
-    "Stir before drinking if preferred."
-  ],
-  "tips": [
-    "A clear glass shows the characteristic layers."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "3–4 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Sweet",
-  "texture": "Syrupy",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "condensed-milk"
-  ]
-},
-{
-  "id": "espresso-romano",
-  "name": "Espresso Romano",
-  "emoji": "🍋",
-  "cat": "espresso",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Espresso served with a strip of lemon peel for a bright citrus aroma.",
-  "ingredients": [
-    "Double espresso",
-    "1 strip lemon peel"
-  ],
-  "machine": [
-    "Brew a double espresso.",
-    "Express the lemon peel over the crema by gently twisting it.",
-    "Rub the peel around the rim if desired and serve alongside."
-  ],
-  "tips": [
-    "Use peel rather than lemon juice so the coffee is not sharply acidic."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "2 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "None",
-  "texture": "Black",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "citrus",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "cafe-cubano",
-  "name": "Café Cubano",
-  "emoji": "🇨🇺",
-  "cat": "espresso",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Sweet, punchy espresso with a whipped sugar crema.",
-  "ingredients": [
-    "Double espresso",
-    "2 tsp caster or demerara sugar"
-  ],
-  "machine": [
-    "Place sugar in a small cup.",
-    "Start brewing a double espresso.",
-    "Mix a teaspoon of the first brewed espresso with the sugar and beat vigorously until pale and foamy.",
-    "Pour the remaining espresso over the whipped sugar and stir gently."
-  ],
-  "tips": [
-    "The vigorous sugar-whipping creates the characteristic espuma."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "2–3 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Sweet",
-  "texture": "Syrupy",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "sweet",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "red-eye",
-  "name": "Red Eye",
-  "emoji": "👁️",
-  "cat": "filter",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Filter coffee reinforced with espresso for an extra coffee-forward cup.",
-  "ingredients": [
-    "235ml CLASSIC filter coffee",
-    "Single espresso"
-  ],
-  "machine": [
-    "Install the LUXE basket and brew 235ml CLASSIC coffee.",
-    "Separately brew a single espresso using the SINGLE basket.",
-    "Pour the espresso into the filter coffee and stir."
-  ],
-  "tips": [
-    "This is a high-caffeine drink; choose decaf for either component if preferred."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "10 oz",
-  "brewMode": "Coffee + Espresso",
-  "brewStyle": "Classic",
-  "basket": "Luxe + Single",
-  "milkType": null,
-  "coffeeIntensity": "Very strong",
-  "sweetness": "None",
-  "texture": "Black",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "strong",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "long-black",
-  "name": "Long Black",
-  "emoji": "☕",
-  "cat": "espresso",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Hot water topped with espresso for a bold long drink with more crema character.",
-  "ingredients": [
-    "120ml hot water",
-    "Double espresso"
-  ],
-  "machine": [
-    "Add hot water to the cup first.",
-    "Brew a double espresso separately.",
-    "Pour the espresso gently over the hot water."
-  ],
-  "tips": [
-    "Water first distinguishes it from the usual Americano build."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "6 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "None",
-  "texture": "Black",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "piccolo",
-  "name": "Piccolo Latte",
-  "emoji": "🥛",
-  "cat": "milk",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A small, coffee-forward milk drink with silky microfoam.",
-  "ingredients": [
-    "Single espresso",
-    "60–90ml milk"
-  ],
-  "machine": [
-    "Brew a single espresso into a small glass.",
-    "Add milk to the jug and select the correct MILK TYPE.",
-    "Select THIN FROTH and froth.",
-    "Pour just enough textured milk to reach roughly 90–120ml total."
-  ],
-  "tips": [
-    "Keep the serving small so the espresso remains prominent."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "3–4 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Single",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Strong",
-  "sweetness": "None",
-  "texture": "Creamy",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "milk"
-  ]
-},
-{
-  "id": "magic-coffee",
-  "name": "Magic",
-  "emoji": "🪄",
-  "cat": "milk",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A Melbourne-style small milk coffee built around a strong espresso base and thin microfoam.",
-  "ingredients": [
-    "Double espresso",
-    "100–120ml milk"
-  ],
-  "machine": [
-    "Brew a strong double espresso into a 150–180ml cup.",
-    "Froth milk using THIN FROTH.",
-    "Pour enough milk to fill the small cup, keeping the coffee flavour prominent."
-  ],
-  "tips": [
-    "Best in a smaller cup; the point is a stronger coffee-to-milk ratio than a latte."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "5–6 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Strong",
-  "sweetness": "None",
-  "texture": "Velvety",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "hot",
-    "milk"
-  ]
-},
-{
-  "id": "latte-macchiato",
-  "name": "Latte Macchiato",
-  "emoji": "🥛",
-  "cat": "milk",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Steamed milk marked with espresso, producing attractive layers.",
-  "ingredients": [
-    "Double espresso",
-    "180–200ml milk"
-  ],
-  "machine": [
-    "Froth the milk first using THIN FROTH.",
-    "Pour the milk into a tall heatproof glass and allow it to settle briefly.",
-    "Brew a double espresso into a small pitcher or cup.",
-    "Pour the espresso slowly through the milk to create layers."
-  ],
-  "tips": [
-    "Milk-first preparation gives this drink its characteristic look."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Mild",
-  "sweetness": "None",
-  "texture": "Foamy",
-  "sourceType": "Classic / community",
-  "tags": [
-    "hot",
-    "milk",
-    "layered"
-  ]
-},
-{
-  "id": "freddo-espresso",
-  "name": "Freddo Espresso",
-  "emoji": "🇬🇷",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Greek-style chilled espresso shaken until lightly foamy and served over ice.",
-  "ingredients": [
-    "Double espresso",
-    "Ice cubes",
-    "5–10ml simple syrup (optional)"
-  ],
-  "machine": [
-    "Brew a double espresso.",
-    "Add espresso, optional syrup and several ice cubes to a shaker.",
-    "Shake vigorously for 10–15 seconds.",
-    "Strain over fresh ice."
-  ],
-  "tips": [
-    "Shake with ice, then serve over fresh ice to avoid excessive dilution."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "8 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Light",
-  "texture": "Light foam",
-  "sourceType": "Classic",
-  "tags": [
-    "iced",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "freddo-cappuccino",
-  "name": "Freddo Cappuccino",
-  "emoji": "🇬🇷",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A Freddo Espresso topped with thick cold milk foam.",
-  "ingredients": [
-    "Double espresso",
-    "Ice cubes",
-    "80ml cold milk",
-    "5–10ml simple syrup (optional)"
-  ],
-  "machine": [
-    "Prepare a Freddo Espresso by shaking espresso with ice and optional syrup.",
-    "Strain over fresh ice.",
-    "Add cold milk to the jug and select COLD FOAM.",
-    "Spoon the cold foam over the espresso."
-  ],
-  "tips": [
-    "A dusting of cinnamon works well on top."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Strong",
-  "sweetness": "Light",
-  "texture": "Foamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "iced",
-    "cold-foam"
-  ]
-},
-{
-  "id": "shakerato",
-  "name": "Espresso Shakerato",
-  "emoji": "🧊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Italian-style espresso shaken hard with ice for a cold, aerated finish.",
-  "ingredients": [
-    "Double espresso",
-    "Ice cubes",
-    "5ml simple syrup (optional)"
-  ],
-  "machine": [
-    "Brew a double espresso.",
-    "Add espresso, ice and optional syrup to a cocktail shaker.",
-    "Shake hard until the shaker is very cold.",
-    "Fine-strain into a chilled small glass."
-  ],
-  "tips": [
-    "Serve without the spent shaking ice for a cleaner flavour."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "4–6 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Light",
-  "texture": "Foamy",
-  "sourceType": "Classic",
-  "tags": [
-    "iced",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "iced-caramel-macchiato",
-  "name": "Iced Caramel Macchiato",
-  "emoji": "🍮",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Vanilla milk over ice marked with espresso and caramel.",
-  "ingredients": [
-    "15ml vanilla syrup",
-    "150ml milk",
-    "Double espresso",
-    "Ice cubes",
-    "10ml caramel sauce"
-  ],
-  "machine": [
-    "Add vanilla syrup to a tall glass, then milk and ice.",
-    "Brew a double espresso separately.",
-    "Pour espresso over the milk so it remains visibly layered.",
-    "Drizzle caramel sauce over the top."
-  ],
-  "tips": [
-    "Stir before drinking for an even flavour, or leave layered for presentation."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Coffee-shop inspired",
-  "tags": [
-    "iced",
-    "caramel",
-    "vanilla"
-  ]
-},
-{
-  "id": "dubai-chocolate-iced-latte",
-  "name": "Pistachio Chocolate Iced Latte",
-  "emoji": "💚",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Pistachio and chocolate with cold espresso and milk — a dessert-like combination.",
-  "ingredients": [
-    "Double cold-pressed espresso",
-    "15ml pistachio syrup",
-    "10ml chocolate sauce",
-    "150ml oat or dairy milk",
-    "Ice cubes",
-    "Crushed pistachios (optional)"
-  ],
-  "machine": [
-    "Add pistachio syrup and chocolate sauce to the glass.",
-    "Fill with ice and add milk.",
-    "Install the LUXE basket and brew COLD-PRESSED espresso.",
-    "Pour over the milk and stir.",
-    "Garnish with crushed pistachios if desired."
-  ],
-  "tips": [
-    "Check nut-allergy suitability of syrups and garnish."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Cold-Pressed",
-  "brewStyle": "Cold-Pressed",
-  "basket": "Luxe",
-  "milkType": "Dairy or oat",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Community-inspired",
-  "tags": [
-    "iced",
-    "pistachio",
-    "chocolate",
-    "nuts"
-  ]
-},
-{
-  "id": "iced-white-mocha",
-  "name": "Iced White Mocha",
-  "emoji": "🤍",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Cold espresso, white chocolate and milk over ice.",
-  "ingredients": [
-    "Double espresso",
-    "20ml white chocolate sauce",
-    "150ml milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add white chocolate sauce to the glass.",
-    "Brew espresso over the sauce and stir until smooth.",
-    "Fill with ice.",
-    "Add cold milk and stir."
-  ],
-  "tips": [
-    "Cold foam makes this more dessert-like."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Coffee-shop inspired",
-  "tags": [
-    "iced",
-    "white-chocolate"
-  ]
-},
-{
-  "id": "salted-maple-cold-press",
-  "name": "Salted Maple Cold-Pressed",
-  "emoji": "🍁",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Cold-pressed espresso sweetened with maple and a tiny pinch of salt.",
-  "ingredients": [
-    "Cold-pressed espresso",
-    "15ml maple syrup",
-    "Tiny pinch sea salt",
-    "Ice cubes",
-    "100ml milk (optional)"
-  ],
-  "machine": [
-    "Add maple syrup and salt to a glass.",
-    "Fill with ice.",
-    "Install LUXE basket and select COLD-PRESSED.",
-    "Brew over the ice and stir.",
-    "Add milk if desired."
-  ],
-  "tips": [
-    "Salt should enhance the maple, not taste salty."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "10 oz",
-  "brewMode": "Cold-Pressed",
-  "brewStyle": "Cold-Pressed",
-  "basket": "Luxe",
-  "milkType": "Optional",
-  "coffeeIntensity": "Strong",
-  "sweetness": "Medium",
-  "texture": "Light",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "maple",
-    "cold-pressed"
-  ]
-},
-{
-  "id": "honey-oat-cold-press",
-  "name": "Honey Oat Cold-Pressed",
-  "emoji": "🍯",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Smooth cold-pressed espresso with honey and oat drink.",
-  "ingredients": [
-    "Cold-pressed espresso",
-    "15ml honey",
-    "150ml oat drink",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Stir honey with a splash of warm water to loosen it.",
-    "Fill a glass with ice and oat drink.",
-    "Brew COLD-PRESSED espresso using the LUXE basket.",
-    "Pour over the milk and stir in the honey."
-  ],
-  "tips": [
-    "Loosening honey first prevents it sticking to the bottom of the glass."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Cold-Pressed",
-  "brewStyle": "Cold-Pressed",
-  "basket": "Luxe",
-  "milkType": "Oat",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "honey",
-    "oat",
-    "cold-pressed"
-  ]
-},
-{
-  "id": "orange-tonic-espresso",
-  "name": "Espresso Tonic",
-  "emoji": "🍊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Bitter tonic water, citrus and espresso make a bright, refreshing coffee highball.",
-  "ingredients": [
-    "Double espresso",
-    "120ml tonic water",
-    "Ice cubes",
-    "Orange peel"
-  ],
-  "machine": [
-    "Fill a tall glass with ice and tonic water.",
-    "Brew a double espresso separately and allow it to cool for a minute.",
-    "Slowly pour espresso over the tonic.",
-    "Garnish with orange peel."
-  ],
-  "tips": [
-    "Pour slowly because espresso can make tonic foam rapidly."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Light",
-  "texture": "Sparkling",
-  "sourceType": "Modern classic",
-  "tags": [
-    "iced",
-    "citrus",
-    "dairy-free",
-    "vegan"
-  ]
-},
-{
-  "id": "dark-chocolate-mocha",
-  "name": "Dark Chocolate Mocha",
-  "emoji": "🍫",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A less-sweet mocha with dark chocolate and steamed milk.",
-  "ingredients": [
-    "Double espresso",
-    "20g dark chocolate or 20ml dark chocolate sauce",
-    "180ml milk"
-  ],
-  "machine": [
-    "Place chocolate in the cup.",
-    "Brew espresso over it and stir until smooth.",
-    "Froth milk using THIN FROTH.",
-    "Pour over the chocolate espresso."
-  ],
-  "tips": [
-    "70% dark chocolate gives a more grown-up flavour."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "hot",
-    "chocolate"
-  ]
-},
-{
-  "id": "peppermint-mocha",
-  "name": "Peppermint Mocha",
-  "emoji": "🌿",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Chocolate espresso with peppermint and steamed milk.",
-  "ingredients": [
-    "Double espresso",
-    "15ml chocolate sauce",
-    "5–10ml peppermint syrup",
-    "180ml milk"
-  ],
-  "machine": [
-    "Combine chocolate and peppermint syrup in the cup.",
-    "Brew espresso over them and stir.",
-    "Froth milk on THIN FROTH.",
-    "Pour and finish with cocoa if desired."
-  ],
-  "tips": [
-    "Peppermint is potent; start with a small amount."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Coffee-shop inspired",
-  "tags": [
-    "hot",
-    "chocolate",
-    "mint",
-    "seasonal"
-  ]
-},
-{
-  "id": "black-forest-mocha",
-  "name": "Black Forest Mocha",
-  "emoji": "🍒",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Chocolate and cherry turn a mocha into a Black Forest-style treat.",
-  "ingredients": [
-    "Double espresso",
-    "15ml chocolate sauce",
-    "10ml cherry syrup",
-    "180ml milk",
-    "Whipped cream (optional)"
-  ],
-  "machine": [
-    "Add chocolate and cherry syrup to the cup.",
-    "Brew espresso over them and stir.",
-    "Froth milk on THIN FROTH and pour.",
-    "Top with whipped cream if desired."
-  ],
-  "tips": [
-    "Use food-grade cherry syrup rather than cocktail cherry brine."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10–12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "hot",
-    "chocolate",
-    "cherry"
-  ]
-},
-{
-  "id": "biscoff-mocha",
-  "name": "Biscoff Mocha",
-  "emoji": "🍪",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Spiced biscuit spread, chocolate and espresso with steamed milk.",
-  "ingredients": [
-    "Double espresso",
-    "1 tbsp Biscoff spread",
-    "10ml chocolate sauce",
-    "180ml milk"
-  ],
-  "machine": [
-    "Add Biscoff and chocolate to the cup.",
-    "Brew espresso directly over them and stir smooth.",
-    "Froth milk on THIN FROTH.",
-    "Pour and dust with biscuit crumbs if desired."
-  ],
-  "tips": [
-    "Check the spread label for dietary/allergen requirements."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Sweet",
-  "texture": "Creamy",
-  "sourceType": "Community-inspired",
-  "tags": [
-    "hot",
-    "biscoff",
-    "chocolate"
-  ]
-},
-{
-  "id": "apple-pie-latte",
-  "name": "Apple Pie Latte",
-  "emoji": "🍎",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "A spiced latte with apple syrup and cinnamon.",
-  "ingredients": [
-    "Double espresso",
-    "15ml apple syrup",
-    "Pinch cinnamon",
-    "180ml milk"
-  ],
-  "machine": [
-    "Add apple syrup and cinnamon to the cup.",
-    "Brew espresso over them and stir.",
-    "Froth milk on THIN FROTH.",
-    "Pour and finish with cinnamon."
-  ],
-  "tips": [
-    "Use a syrup intended for hot drinks to reduce the chance of milk curdling."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "hot",
-    "apple",
-    "seasonal"
-  ]
-},
-{
-  "id": "spiced-maple-latte",
-  "name": "Spiced Maple Latte",
-  "emoji": "🍁",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Maple, cinnamon and nutmeg with espresso and silky milk.",
-  "ingredients": [
-    "Double espresso",
-    "15ml maple syrup",
-    "Pinch cinnamon",
-    "Tiny pinch nutmeg",
-    "180ml milk"
-  ],
-  "machine": [
-    "Add maple and spices to the cup.",
-    "Brew espresso over them and stir.",
-    "Froth milk using THIN FROTH.",
-    "Pour and garnish with cinnamon."
-  ],
-  "tips": [
-    "Freshly grated nutmeg is powerful; use sparingly."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "hot",
-    "maple",
-    "seasonal"
-  ]
-},
-{
-  "id": "luxury-hot-chocolate",
-  "name": "Luxury Hot Chocolate",
-  "emoji": "🍫",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Rich hot chocolate prepared using the Luxe Café milk system.",
-  "ingredients": [
-    "200ml whole milk",
-    "25–30g finely chopped chocolate or hot-chocolate flakes"
-  ],
-  "machine": [
-    "Add milk and chocolate to the milk jug, staying below the MAX line.",
-    "Ensure the whisk is fitted and the outside of the jug is dry.",
-    "Select DAIRY and THICK FROTH.",
-    "Start frothing, then pour into a mug.",
-    "Clean and purge the steam wand immediately afterwards."
-  ],
-  "tips": [
-    "Finely chopped chocolate melts more evenly than large pieces.",
-    "Clean the jug, whisk and wand thoroughly after chocolate drinks."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thick Froth",
-  "size": "8 oz",
-  "brewMode": "Milk only",
-  "brewStyle": "—",
-  "basket": "None",
-  "milkType": "Dairy",
-  "coffeeIntensity": "None",
-  "sweetness": "Sweet",
-  "texture": "Thick",
-  "sourceType": "Community-inspired",
-  "tags": [
-    "hot",
-    "non-coffee",
-    "chocolate"
-  ]
-},
-{
-  "id": "white-hot-chocolate",
-  "name": "White Hot Chocolate",
-  "emoji": "🤍",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Creamy white chocolate steamed with milk.",
-  "ingredients": [
-    "200ml milk",
-    "25g white chocolate, finely chopped"
-  ],
-  "machine": [
-    "Add milk and finely chopped white chocolate to the jug.",
-    "Select the correct MILK TYPE and THICK FROTH.",
-    "Froth until complete and pour immediately.",
-    "Clean and purge the wand straight away."
-  ],
-  "tips": [
-    "White chocolate is naturally very sweet, so no extra sugar is usually needed."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thick Froth",
-  "size": "8 oz",
-  "brewMode": "Milk only",
-  "brewStyle": "—",
-  "basket": "None",
-  "milkType": "Dairy or suitable plant-based",
-  "coffeeIntensity": "None",
-  "sweetness": "Sweet",
-  "texture": "Thick",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "hot",
-    "non-coffee",
-    "white-chocolate"
-  ]
-},
-{
-  "id": "dirty-chai",
-  "name": "Dirty Chai Latte",
-  "emoji": "🫖",
-  "cat": "speciality",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Spiced chai latte strengthened with espresso.",
-  "ingredients": [
-    "Single espresso",
-    "15–20g chai powder or 30ml chai concentrate",
-    "180ml milk"
-  ],
-  "machine": [
-    "Add chai to the serving cup.",
-    "Brew a single espresso over it and stir.",
-    "Froth milk using THIN FROTH.",
-    "Pour over the chai espresso."
-  ],
-  "tips": [
-    "Reduce chai concentrate if it is already very sweet."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Thin Froth",
-  "size": "10 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Single",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "hot",
-    "chai",
-    "spiced"
-  ]
-},
-{
-  "id": "iced-dirty-chai",
-  "name": "Iced Dirty Chai",
-  "emoji": "🧊",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Chai, espresso and cold milk over ice.",
-  "ingredients": [
-    "Single espresso",
-    "30ml chai concentrate",
-    "150ml milk",
-    "Ice cubes"
-  ],
-  "machine": [
-    "Add chai concentrate to a glass.",
-    "Fill with ice and milk.",
-    "Brew a single espresso separately.",
-    "Pour espresso over the drink and stir."
-  ],
-  "tips": [
-    "Cold foam is an optional topping."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": "Cold Foam (optional)",
-  "size": "12 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Single",
-  "milkType": "Dairy or plant-based",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Creamy",
-  "sourceType": "Classic / adapted",
-  "tags": [
-    "iced",
-    "chai"
-  ]
-},
-{
-  "id": "espresso-con-panna",
-  "name": "Espresso Con Panna",
-  "emoji": "🍦",
-  "cat": "espresso",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Espresso topped with a small spoonful of softly whipped cream.",
-  "ingredients": [
-    "Double espresso",
-    "1–2 tbsp lightly whipped double cream"
-  ],
-  "machine": [
-    "Brew a double espresso into a small cup.",
-    "Spoon lightly whipped cream over the centre.",
-    "Serve immediately without stirring."
-  ],
-  "tips": [
-    "Keep the cream only lightly whipped so it melts gradually into the espresso."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "2–3 oz",
-  "brewMode": "Espresso",
-  "brewStyle": "Classic",
-  "basket": "Double",
-  "milkType": null,
-  "coffeeIntensity": "Strong",
-  "sweetness": "Light",
-  "texture": "Creamy",
-  "sourceType": "Classic",
-  "tags": [
-    "hot",
-    "cream"
-  ]
-},
-{
-  "id": "vanilla-cold-brew",
-  "name": "Vanilla Cold Brew",
-  "emoji": "🌸",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Smooth Ninja cold brew flavoured with vanilla syrup.",
-  "ingredients": [
-    "295ml cold brew",
-    "15ml vanilla syrup",
-    "Ice cubes",
-    "Splash of milk (optional)"
-  ],
-  "machine": [
-    "Add vanilla syrup to a tall glass and fill with ice.",
-    "Install the LUXE basket and select COLD BREW, size M (295ml).",
-    "Brew directly into the glass.",
-    "Stir and add a splash of milk if desired."
-  ],
-  "tips": [
-    "Taste before adding more syrup; cold drinks can need less sweetness than expected."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Coffee",
-  "brewStyle": "Cold Brew",
-  "basket": "Luxe",
-  "milkType": "Optional",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Light",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "cold-brew",
-    "flavoured"
-  ]
-},
-{
-  "id": "caramel-cold-brew",
-  "name": "Caramel Cold Brew",
-  "emoji": "🍮",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Smooth Ninja cold brew flavoured with caramel syrup.",
-  "ingredients": [
-    "295ml cold brew",
-    "15ml caramel syrup",
-    "Ice cubes",
-    "Splash of milk (optional)"
-  ],
-  "machine": [
-    "Add caramel syrup to a tall glass and fill with ice.",
-    "Install the LUXE basket and select COLD BREW, size M (295ml).",
-    "Brew directly into the glass.",
-    "Stir and add a splash of milk if desired."
-  ],
-  "tips": [
-    "Taste before adding more syrup; cold drinks can need less sweetness than expected."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Coffee",
-  "brewStyle": "Cold Brew",
-  "basket": "Luxe",
-  "milkType": "Optional",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Light",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "cold-brew",
-    "flavoured"
-  ]
-},
-{
-  "id": "maple-cold-brew",
-  "name": "Maple Cold Brew",
-  "emoji": "🍁",
-  "cat": "iced",
-  "official": false,
-  "difficulty": "beginner",
-  "time": 6,
-  "serves": 1,
-  "desc": "Smooth Ninja cold brew flavoured with maple syrup.",
-  "ingredients": [
-    "295ml cold brew",
-    "15ml maple syrup",
-    "Ice cubes",
-    "Splash of milk (optional)"
-  ],
-  "machine": [
-    "Add maple syrup to a tall glass and fill with ice.",
-    "Install the LUXE basket and select COLD BREW, size M (295ml).",
-    "Brew directly into the glass.",
-    "Stir and add a splash of milk if desired."
-  ],
-  "tips": [
-    "Taste before adding more syrup; cold drinks can need less sweetness than expected."
-  ],
-  "grind": "Use Barista Assist recommendation",
-  "strength": "Default",
-  "froth": null,
-  "size": "12 oz",
-  "brewMode": "Coffee",
-  "brewStyle": "Cold Brew",
-  "basket": "Luxe",
-  "milkType": "Optional",
-  "coffeeIntensity": "Medium",
-  "sweetness": "Medium",
-  "texture": "Light",
-  "sourceType": "Original adaptation",
-  "tags": [
-    "iced",
-    "cold-brew",
-    "flavoured"
-  ]
+  },
+];
+
+// Extended recipe library. These recipes use original wording and are adapted
+// for the Ninja Luxe Café workflow rather than copied from third-party recipes.
+function extendedDrink(o) {
+  var iced = o.temp === "iced";
+  var milkQty = o.milkQty || (iced ? 140 : 180);
+  var coffee = o.brewStyle === "Filter" ? "Rich filter coffee" : o.brewStyle === "Cold Brew" ? "Cold brew coffee" : o.brewStyle === "Cold Pressed" ? "Cold-pressed espresso" : "Double espresso";
+  var ingredients = o.noCoffee ? [] : [coffee + " ("+(o.coffeeQty || (o.brewStyle === "Filter" || o.brewStyle === "Cold Brew" ? "120ml" : "60ml"))+")"];
+  if (o.flavour) ingredients.push(o.flavour);
+  if (o.milk !== "None") ingredients.push(milkQty+"ml "+(o.milk || "whole milk"));
+  if (iced) ingredients.push("Ice cubes");
+  (o.extras || []).forEach(function(x){ingredients.push(x);});
+  var machine = [];
+  if (o.prep) machine.push(o.prep);
+  if (o.noCoffee) machine.push("Prepare the flavour base in the serving cup");
+  else if (o.brewStyle === "Filter") machine.push("Brew RICH filter coffee at the selected size");
+  else if (o.brewStyle === "Cold Brew") machine.push("Brew using the COLD BREW setting over ice");
+  else if (o.brewStyle === "Cold Pressed") machine.push("Fit the Luxe basket and brew COLD PRESSED espresso");
+  else machine.push("Fit the double basket and brew a DOUBLE ESPRESSO");
+  if (iced) machine.push("Fill the serving glass with ice");
+  if (o.shake) machine.push("Add the coffee and flavouring to a sealed shaker with ice, then shake for 10–15 seconds");
+  if (o.milk !== "None") {
+    if (o.froth === "Cold Froth") machine.push("Froth the milk using COLD FOAM, then pour over the drink");
+    else if (iced) machine.push("Pour the cold milk into the glass");
+    else machine.push("Froth the milk using "+(o.froth || "THIN FROTH")+" and pour over the coffee");
+  }
+  if (o.finish) machine.push(o.finish);
+  return {
+    id:o.id,name:o.name,emoji:o.emoji||"☕",cat:o.cat||"speciality",official:false,
+    difficulty:o.difficulty||"beginner",time:o.time||6,serves:1,
+    desc:o.desc,ingredients:ingredients,machine:machine,
+    tips:o.tips||["Use Barista Assist for the grind recommendation for your current beans","Adjust the flavouring to suit your preferred sweetness"],
+    grind:o.noCoffee ? "Not required" : o.brewStyle === "Filter" || o.brewStyle === "Cold Brew" ? "Barista Assist — filter" : "Barista Assist — espresso",
+    strength:o.intensity === "strong" ? "Bold ●●●" : o.intensity === "mild" ? "Mild ●○○" : "Balanced ●●○",
+    froth:o.milk === "None" ? null : (o.froth|| (iced?"None":"Thin Froth")),size:o.size||(iced?"12 oz":"8–10 oz"),
+    tags:(o.tags||[]).concat([iced?"iced":"hot",o.brewStyle.toLowerCase().replace(/ /g,"-"),o.intensity||"medium",o.sweetness||"medium",o.texture|| (o.milk==="None"?"black":"milky")]),
+    temperature:o.temp,brewStyle:o.brewStyle,basket:o.noCoffee?"None":(o.basket||(o.brewStyle.indexOf("Cold")===0?"Luxe":"Double")),
+    milkType:o.milk||"None",intensity:o.intensity||"medium",sweetness:o.sweetness||"medium",texture:o.texture||(o.milk==="None"?"black":"milky"),origin:o.origin||"Community-inspired",
+    ingredientTags:o.ingredientTags||[]
+  };
 }
 
-];
+[
+  {id:"hazelnut-latte",name:"Hazelnut Latte",emoji:"🌰",desc:"A smooth latte with roasted hazelnut sweetness.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml hazelnut syrup",ingredientTags:["milk","hazelnut syrup"]},
+  {id:"honey-cinnamon-latte",name:"Honey Cinnamon Latte",emoji:"🍯",desc:"Gently sweet honey and warming cinnamon with espresso and steamed milk.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml runny honey",extras:["¼ tsp ground cinnamon"],ingredientTags:["milk","honey","cinnamon"]},
+  {id:"maple-oat-latte",name:"Maple Oat Latte",emoji:"🍁",desc:"A mellow oat latte naturally sweetened with maple syrup.",temp:"hot",brewStyle:"Espresso",milk:"oat milk",flavour:"15ml maple syrup",tags:["dairy-free","vegan"],ingredientTags:["oat milk","maple syrup"]},
+  {id:"pistachio-latte",name:"Pistachio Latte",emoji:"💚",desc:"Creamy espresso with a distinctive sweet pistachio flavour.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml pistachio syrup",ingredientTags:["milk","pistachio syrup"]},
+  {id:"biscoff-latte",name:"Biscoff Latte",emoji:"🍪",desc:"A biscuit-spiced latte with caramelised Biscoff flavour.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"1 tbsp smooth Biscoff spread",prep:"Add the Biscoff spread to the cup",finish:"Stir thoroughly and finish with a light biscuit crumb",ingredientTags:["milk","Biscoff"]},
+  {id:"nutella-latte",name:"Chocolate Hazelnut Latte",emoji:"🍫",desc:"A rich chocolate-hazelnut latte made for a proper treat.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"1 tbsp chocolate-hazelnut spread",prep:"Add the spread to the cup so the hot espresso melts it",sweetness:"sweet",ingredientTags:["milk","chocolate spread"]},
+  {id:"rose-latte",name:"Rose Vanilla Latte",emoji:"🌹",desc:"A fragrant vanilla latte with a delicate touch of rose.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"10ml vanilla syrup",extras:["2–3 drops culinary rose water"],sweetness:"light",ingredientTags:["milk","vanilla syrup","rose water"]},
+  {id:"lavender-latte",name:"Lavender Latte",emoji:"💜",desc:"A softly floral latte that works particularly well with medium-roast beans.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"10ml culinary lavender syrup",sweetness:"light",ingredientTags:["milk","lavender syrup"]},
+  {id:"coconut-latte",name:"Coconut Latte",emoji:"🥥",desc:"A tropical, dairy-free latte with creamy coconut character.",temp:"hot",brewStyle:"Espresso",milk:"barista coconut milk",flavour:"10ml vanilla syrup",tags:["dairy-free","vegan"],ingredientTags:["coconut milk","vanilla syrup"]},
+  {id:"salted-caramel-latte",name:"Salted Caramel Latte",emoji:"🧂",desc:"Buttery caramel balanced with a small pinch of sea salt.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml caramel syrup",extras:["Small pinch of sea salt"],sweetness:"sweet",ingredientTags:["milk","caramel syrup"]},
+  {id:"gingerbread-latte",name:"Gingerbread Latte",emoji:"🫚",desc:"A warmly spiced seasonal latte with gingerbread sweetness.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml gingerbread syrup",extras:["Pinch of cinnamon"],ingredientTags:["milk","gingerbread syrup"]},
+  {id:"toffee-nut-latte",name:"Toffee Nut Latte",emoji:"🌰",desc:"Sweet toffee and toasted nut flavours in a comforting latte.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"15ml toffee nut syrup",sweetness:"sweet",ingredientTags:["milk","toffee nut syrup"]},
+  {id:"cinnamon-roll-latte",name:"Cinnamon Roll Latte",emoji:"🌀",desc:"Vanilla, brown sugar and cinnamon recreate the flavour of a cinnamon bun.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"10ml vanilla syrup",extras:["1 tsp brown sugar","¼ tsp cinnamon"],sweetness:"sweet",ingredientTags:["milk","vanilla syrup","brown sugar","cinnamon"]},
+  {id:"white-chocolate-latte",name:"White Chocolate Latte",emoji:"🤍",desc:"A creamy, dessert-like latte with smooth white chocolate.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"20ml white chocolate sauce",sweetness:"sweet",ingredientTags:["milk","white chocolate"]},
+  {id:"creme-brulee-latte",name:"Crème Brûlée Latte",emoji:"🔥",desc:"Caramel and vanilla create a custard-like café treat.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",flavour:"10ml vanilla syrup",extras:["10ml caramel syrup"],finish:"Top with thick froth and a pinch of brown sugar",sweetness:"sweet",froth:"Thick Froth",ingredientTags:["milk","vanilla syrup","caramel syrup"]},
+
+  {id:"brown-sugar-shaken",name:"Brown Sugar Shaken Espresso",emoji:"🤎",desc:"Shaken espresso with brown sugar, cinnamon and oat milk.",temp:"iced",brewStyle:"Cold Pressed",milk:"oat milk",milkQty:100,flavour:"15ml brown sugar syrup",extras:["Pinch of cinnamon"],shake:true,intensity:"strong",tags:["dairy-free","vegan"],ingredientTags:["oat milk","brown sugar syrup","cinnamon"]},
+  {id:"iced-caramel-macchiato",name:"Iced Caramel Macchiato",emoji:"🍮",desc:"Vanilla milk over ice, marked with espresso and caramel drizzle.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"10ml vanilla syrup",extras:["Caramel sauce to finish"],finish:"Pour the coffee over the milk and finish with caramel sauce",sweetness:"sweet",ingredientTags:["milk","vanilla syrup","caramel sauce"]},
+  {id:"iced-pistachio-latte",name:"Iced Pistachio Latte",emoji:"💚",desc:"A creamy iced latte with sweet pistachio flavour.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"15ml pistachio syrup",ingredientTags:["milk","pistachio syrup"]},
+  {id:"vietnamese-iced-coffee",name:"Vietnamese-Style Iced Coffee",emoji:"🇻🇳",desc:"Strong chilled coffee sweetened with condensed milk.",temp:"iced",brewStyle:"Cold Pressed",milk:"None",flavour:"30ml sweetened condensed milk",prep:"Add condensed milk to the serving glass",finish:"Stir the coffee and condensed milk thoroughly over ice",intensity:"strong",sweetness:"sweet",texture:"creamy",ingredientTags:["condensed milk"]},
+  {id:"espresso-tonic",name:"Espresso Tonic",emoji:"🫧",desc:"Bright espresso over tonic water and ice for a crisp, sparkling drink.",temp:"iced",brewStyle:"Cold Pressed",milk:"None",coffeeQty:"45ml",extras:["120ml chilled tonic water","Orange slice"],prep:"Fill a tall glass with ice and tonic water",finish:"Slowly pour the espresso over the tonic and garnish with orange",intensity:"strong",sweetness:"light",texture:"sparkling",ingredientTags:["tonic water","orange"]},
+  {id:"iced-white-mocha",name:"Iced White Mocha",emoji:"🤍",desc:"Cold-pressed espresso, white chocolate and cold milk over ice.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"20ml white chocolate sauce",sweetness:"sweet",ingredientTags:["milk","white chocolate"]},
+  {id:"iced-mocha",name:"Iced Mocha",emoji:"🍫",desc:"A chilled blend of espresso, chocolate and milk.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"20ml chocolate sauce",ingredientTags:["milk","chocolate sauce"]},
+  {id:"iced-maple-oat",name:"Iced Maple Oat Latte",emoji:"🍁",desc:"Cold-pressed espresso with oat milk and real maple syrup.",temp:"iced",brewStyle:"Cold Pressed",milk:"oat milk",flavour:"15ml maple syrup",tags:["dairy-free","vegan"],ingredientTags:["oat milk","maple syrup"]},
+  {id:"iced-coconut-latte",name:"Iced Coconut Latte",emoji:"🥥",desc:"A refreshing dairy-free latte with coconut and vanilla.",temp:"iced",brewStyle:"Cold Pressed",milk:"barista coconut milk",flavour:"10ml vanilla syrup",tags:["dairy-free","vegan"],ingredientTags:["coconut milk","vanilla syrup"]},
+  {id:"iced-honey-cinnamon",name:"Iced Honey Cinnamon Latte",emoji:"🍯",desc:"Honey and cinnamon soften a bold cold-pressed espresso.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"15ml honey syrup",extras:["Pinch of cinnamon"],ingredientTags:["milk","honey","cinnamon"]},
+  {id:"freddo-cappuccino",name:"Freddo Cappuccino",emoji:"🇬🇷",desc:"Shaken chilled espresso topped with dense cold milk foam.",temp:"iced",brewStyle:"Cold Pressed",milk:"semi-skimmed milk",milkQty:80,flavour:"1 tsp sugar (optional)",shake:true,froth:"Cold Froth",intensity:"strong",texture:"foamy",ingredientTags:["milk","sugar"]},
+  {id:"greek-frappe",name:"Greek-Style Coffee Frappé",emoji:"🥤",desc:"A frothy iced coffee inspired by the Greek café favourite.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:60,flavour:"1–2 tsp sugar",finish:"Froth briefly on COLD FOAM and top with cold water",texture:"foamy",ingredientTags:["milk","sugar"]},
+  {id:"strawberry-iced-latte",name:"Strawberry Iced Latte",emoji:"🍓",desc:"Fruity strawberry milk layered with cold-pressed espresso.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"20ml strawberry syrup",finish:"Pour espresso slowly over the strawberry milk for a layered finish",sweetness:"sweet",ingredientTags:["milk","strawberry syrup"]},
+  {id:"tiramisu-iced-latte",name:"Tiramisu Iced Latte",emoji:"🍰",desc:"Espresso, vanilla and cocoa create an iced dessert-style coffee.",temp:"iced",brewStyle:"Cold Pressed",milk:"whole milk",flavour:"10ml vanilla syrup",extras:["10ml chocolate sauce","Cocoa powder"],sweetness:"sweet",ingredientTags:["milk","vanilla syrup","chocolate sauce"]},
+  {id:"orange-iced-americano",name:"Orange Iced Americano",emoji:"🍊",desc:"A bright iced Americano lifted with fresh orange.",temp:"iced",brewStyle:"Cold Pressed",milk:"None",extras:["120ml chilled water","2 orange slices"],finish:"Top with chilled water, squeeze in one orange slice and garnish with the other",intensity:"strong",sweetness:"none",ingredientTags:["orange"]},
+  {id:"shakerato",name:"Italian Shakerato",emoji:"🇮🇹",desc:"Espresso shaken hard with ice into a silky, foamy chilled drink.",temp:"iced",brewStyle:"Cold Pressed",milk:"None",flavour:"1 tsp sugar syrup (optional)",shake:true,intensity:"strong",sweetness:"light",texture:"foamy",size:"5–6 oz",ingredientTags:["sugar syrup"]},
+
+  {id:"vanilla-sweet-cream-cold",name:"Vanilla Sweet Cream Cold-Pressed",emoji:"🍦",desc:"Smooth cold-pressed espresso topped with vanilla sweet cream foam.",temp:"iced",brewStyle:"Cold Pressed",milk:"single cream",milkQty:70,flavour:"10ml vanilla syrup",froth:"Cold Froth",texture:"creamy",ingredientTags:["cream","vanilla syrup"]},
+  {id:"salted-caramel-foam",name:"Salted Caramel Cold Foam Coffee",emoji:"🧂",desc:"Cold brew topped with sweet-salty caramel cold foam.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:80,flavour:"15ml caramel syrup",extras:["Small pinch of sea salt"],froth:"Cold Froth",texture:"foamy",ingredientTags:["milk","caramel syrup"]},
+  {id:"chocolate-cream-cold",name:"Chocolate Cream Cold Brew",emoji:"🍫",desc:"Cold brew finished with a rich cocoa cold foam.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:80,flavour:"15ml chocolate sauce",froth:"Cold Froth",texture:"foamy",ingredientTags:["milk","chocolate sauce"]},
+  {id:"pistachio-cream-cold",name:"Pistachio Cream Cold Brew",emoji:"💚",desc:"Cold brew with a velvety pistachio cold foam cap.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:80,flavour:"15ml pistachio syrup",froth:"Cold Froth",texture:"foamy",ingredientTags:["milk","pistachio syrup"]},
+  {id:"brown-sugar-cold-foam",name:"Brown Sugar Cold Foam Coffee",emoji:"🤎",desc:"Cold brew topped with cinnamon brown-sugar foam.",temp:"iced",brewStyle:"Cold Brew",milk:"oat milk",milkQty:80,flavour:"15ml brown sugar syrup",extras:["Pinch of cinnamon"],froth:"Cold Froth",texture:"foamy",tags:["dairy-free","vegan"],ingredientTags:["oat milk","brown sugar syrup","cinnamon"]},
+  {id:"cinnamon-vanilla-foam",name:"Cinnamon Vanilla Cold Foam Coffee",emoji:"✨",desc:"Aromatic vanilla foam with cinnamon over cold brew.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:80,flavour:"10ml vanilla syrup",extras:["Pinch of cinnamon"],froth:"Cold Froth",texture:"foamy",ingredientTags:["milk","vanilla syrup","cinnamon"]},
+  {id:"mocha-cold-brew",name:"Mocha Cold Brew",emoji:"🍫",desc:"Chocolate-sweetened cold brew with an optional cold-foam finish.",temp:"iced",brewStyle:"Cold Brew",milk:"whole milk",milkQty:80,flavour:"15ml chocolate sauce",froth:"Cold Froth",ingredientTags:["milk","chocolate sauce"]},
+  {id:"coconut-cold-brew",name:"Coconut Cold Brew",emoji:"🥥",desc:"Cold brew softened with creamy coconut cold foam.",temp:"iced",brewStyle:"Cold Brew",milk:"barista coconut milk",milkQty:80,flavour:"10ml vanilla syrup",froth:"Cold Froth",tags:["dairy-free","vegan"],ingredientTags:["coconut milk","vanilla syrup"]},
+
+  {id:"piccolo",name:"Piccolo Latte",emoji:"🇦🇺",desc:"A small, coffee-forward milk drink with silky microfoam.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",milkQty:90,flavour:null,intensity:"strong",size:"4–5 oz",ingredientTags:["milk"]},
+  {id:"cafe-cubano",name:"Café Cubano",emoji:"🇨🇺",desc:"Intensely sweet espresso with a whipped sugar crema.",temp:"hot",brewStyle:"Espresso",milk:"None",coffeeQty:"45ml",flavour:"2 tsp demerara sugar",prep:"Add sugar to a small cup",finish:"Whip a teaspoon of espresso into the sugar, then stir in the remaining coffee",intensity:"strong",sweetness:"sweet",size:"2–3 oz",ingredientTags:["sugar"]},
+  {id:"cafe-bombon",name:"Café Bombón",emoji:"🇪🇸",desc:"Equal layers of espresso and sweet condensed milk.",temp:"hot",brewStyle:"Espresso",milk:"None",coffeeQty:"45ml",flavour:"45ml sweetened condensed milk",prep:"Pour condensed milk into a heatproof glass",finish:"Slowly pour espresso over the condensed milk to retain the layers",intensity:"strong",sweetness:"sweet",texture:"creamy",size:"3–4 oz",ingredientTags:["condensed milk"]},
+  {id:"espresso-romano",name:"Espresso Romano",emoji:"🍋",desc:"A bright espresso served with fragrant lemon peel.",temp:"hot",brewStyle:"Espresso",milk:"None",coffeeQty:"45ml",extras:["Strip of unwaxed lemon peel"],finish:"Twist the lemon peel over the espresso and serve it alongside",intensity:"strong",sweetness:"none",size:"2–3 oz",ingredientTags:["lemon"]},
+  {id:"magic-coffee",name:"Magic",emoji:"🪄",desc:"A Melbourne-style double ristretto with a modest amount of silky milk.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",milkQty:130,flavour:null,intensity:"strong",size:"5 oz",ingredientTags:["milk"]},
+  {id:"marocchino",name:"Marocchino",emoji:"🇮🇹",desc:"Espresso, cocoa and a small cap of milk foam.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",milkQty:60,flavour:"1 tsp cocoa powder",froth:"Thick Froth",intensity:"strong",size:"3–4 oz",ingredientTags:["milk","cocoa"]},
+  {id:"cafe-au-lait",name:"Café au Lait",emoji:"🇫🇷",desc:"Rich filter coffee and hot milk in equal measure.",temp:"hot",brewStyle:"Filter",milk:"whole milk",milkQty:120,flavour:null,froth:"Steamed Milk",size:"8 oz",ingredientTags:["milk"]},
+  {id:"vienna-melange",name:"Vienna Melange",emoji:"🇦🇹",desc:"Espresso with steamed milk and a generous foamy crown.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",milkQty:150,flavour:null,froth:"Thick Froth",ingredientTags:["milk"]},
+  {id:"breve",name:"Caffè Breve",emoji:"🥛",desc:"An especially rich latte made with equal parts milk and cream.",temp:"hot",brewStyle:"Espresso",milk:"half milk and half single cream",milkQty:160,flavour:null,froth:"Thin Froth",texture:"creamy",ingredientTags:["milk","cream"]},
+  {id:"red-eye",name:"Red Eye",emoji:"👁️",desc:"Rich filter coffee reinforced with a double espresso.",temp:"hot",brewStyle:"Filter",milk:"None",coffeeQty:"180ml",extras:["Double espresso (60ml)"],finish:"Brew the double espresso directly into the filter coffee",intensity:"strong",sweetness:"none",size:"10–12 oz",ingredientTags:[]},
+
+  {id:"luxury-hot-chocolate",name:"Luxury Hot Chocolate",emoji:"🍫",cat:"speciality",desc:"Thick, café-style hot chocolate finished with dense foam.",temp:"hot",brewStyle:"Milk Only",noCoffee:true,milk:"whole milk",milkQty:220,flavour:"25ml chocolate sauce",prep:"Add chocolate sauce to the cup",finish:"Froth on THICK FROTH and dust with cocoa",froth:"Thick Froth",sweetness:"sweet",texture:"creamy",ingredientTags:["milk","chocolate sauce"]},
+  {id:"white-hot-chocolate",name:"White Hot Chocolate",emoji:"🤍",cat:"speciality",desc:"A smooth and creamy white chocolate drink.",temp:"hot",brewStyle:"Milk Only",noCoffee:true,milk:"whole milk",milkQty:220,flavour:"25ml white chocolate sauce",prep:"Add white chocolate sauce to the cup",froth:"Thick Froth",sweetness:"sweet",texture:"creamy",ingredientTags:["milk","white chocolate"]},
+  {id:"chai-latte",name:"Chai Latte",emoji:"🫖",cat:"speciality",desc:"Warm spiced chai with steamed milk and thick foam.",temp:"hot",brewStyle:"Milk Only",noCoffee:true,milk:"whole milk",milkQty:220,flavour:"30ml chai concentrate",prep:"Add chai concentrate to the cup",froth:"Thick Froth",sweetness:"medium",ingredientTags:["milk","chai"]},
+  {id:"dirty-chai",name:"Dirty Chai Latte",emoji:"☕",cat:"speciality",desc:"Spiced chai latte strengthened with a double espresso.",temp:"hot",brewStyle:"Espresso",milk:"whole milk",milkQty:180,flavour:"30ml chai concentrate",froth:"Thin Froth",intensity:"strong",ingredientTags:["milk","chai"]},
+  {id:"matcha-latte",name:"Matcha Latte",emoji:"🍵",cat:"speciality",desc:"Earthy matcha whisked smooth and topped with steamed milk.",temp:"hot",brewStyle:"Milk Only",noCoffee:true,milk:"oat milk",milkQty:200,flavour:"1 tsp matcha powder mixed with 30ml hot water",prep:"Whisk matcha and hot water until completely smooth",tags:["dairy-free","vegan"],ingredientTags:["oat milk","matcha"]},
+  {id:"iced-matcha-latte",name:"Iced Matcha Latte",emoji:"🍵",cat:"iced",desc:"A refreshing iced matcha with creamy oat milk.",temp:"iced",brewStyle:"Milk Only",noCoffee:true,milk:"oat milk",milkQty:180,flavour:"1 tsp matcha powder mixed with 30ml cool water",prep:"Whisk matcha and water until smooth",tags:["dairy-free","vegan"],ingredientTags:["oat milk","matcha"]}
+].forEach(function(recipe){ DRINKS.push(extendedDrink(recipe)); });
+
+// Normalise the original Quick Start recipes so every drink can use the same
+// filters and recommendation engine.
+DRINKS = DRINKS.map(function(d){
+  var iced = d.temperature ? d.temperature === "iced" : (d.cat === "iced" || /iced|cold/i.test(d.name));
+  var black = d.milkType ? d.milkType === "None" : (!d.froth && d.cat !== "milk" && !/latte|mocha|white russian/i.test(d.name));
+  return Object.assign({
+    temperature:iced?"iced":"hot",
+    brewStyle:d.cat === "filter" ? "Filter" : iced&&/cold brew/i.test(d.name)?"Cold Brew":iced?"Cold Pressed":"Espresso",
+    basket:d.cat === "filter" ? "Luxe" : "Double",
+    milkType:black?"None":"Milk",
+    intensity:/bold|rich|●●●/i.test(d.strength||"")?"strong":/mild|●○○/i.test(d.strength||"")?"mild":"medium",
+    sweetness:/martini|white russian|vanilla|caramel|pumpkin|mocha/i.test(d.name)?"sweet":"none",
+    texture:black?"black":d.froth&&/thick|cold/i.test(d.froth)?"foamy":"milky",
+    origin:d.official?"Official Ninja":"Classic",
+    ingredientTags:(d.ingredients||[]).join(" ").toLowerCase().match(/oat milk|whole milk|milk|chocolate|caramel|vanilla|cinnamon|cream|ice|vodka|coffee liqueur/g)||[]
+  },d);
+});
 
 // Froth presets reference
 var FROTH_PRESETS = [
@@ -3097,8 +885,21 @@ function App() {
   var s9=useState(false);     var noteEdit=s9[0]; var setNoteEdit=s9[1];
   var s10=useState({});       var expandedSecs=s10[0]; var setExpandedSecs=s10[1];
   var s11=useState([]);       var favs=s11[0]; var setFavs=s11[1];
-  var s12=useState(false);    var filtersOpen=s12[0]; var setFiltersOpen=s12[1];
-  var s13=useState({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false}); var filters=s13[0]; var setFilters=s13[1];
+  var s12=useState(false);    var pickerOpen=s12[0]; var setPickerOpen=s12[1];
+  var s13=useState({temp:null,style:null,intensity:null}); var picker=s13[0]; var setPicker=s13[1];
+  var s14=useState(false);    var filtersOpen=s14[0]; var setFiltersOpen=s14[1];
+  var s15=useState({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false}); var filters=s15[0]; var setFilters=s15[1];
+  var emptyBean={bean:"",roaster:"",roast:"Medium",grind:"",dose:"18",yield:"36",seconds:"",rating:"👍",notes:""};
+  var s16=useState([]);       var beanLogs=s16[0]; var setBeanLogs=s16[1];
+  var s17=useState(false);    var beanFormOpen=s17[0]; var setBeanFormOpen=s17[1];
+  var s18=useState(emptyBean);var beanDraft=s18[0]; var setBeanDraft=s18[1];
+  var s19=useState([]);       var pantry=s19[0]; var setPantry=s19[1];
+  var s20=useState(false);    var pantryOpen=s20[0]; var setPantryOpen=s20[1];
+  var s21=useState(false);    var pantryOnly=s21[0]; var setPantryOnly=s21[1];
+  var s22=useState({});       var maintenance=s22[0]; var setMaintenance=s22[1];
+  var defaultPrefs={units:"metric",milk:"Any",decaf:false,hideCocktails:false,largeText:false,reducedMotion:false,highContrast:false};
+  var s23=useState(defaultPrefs); var prefs=s23[0]; var setPrefs=s23[1];
+  var s24=useState([]); var madeHistory=s24[0]; var setMadeHistory=s24[1];
 
   var isDark = themeMode === "dark";
   var t = isDark ? DARK : LIGHT;
@@ -3107,6 +908,11 @@ function App() {
     setRatings(lsGet("ratings", {}));
     setNotes(lsGet("notes", {}));
     setFavs(lsGet("favs", []));
+    setBeanLogs(lsGet("bean_logs", []));
+    setPantry(lsGet("pantry", []));
+    setMaintenance(lsGet("maintenance", {}));
+    setPrefs(Object.assign({},defaultPrefs,lsGet("preferences", {})));
+    setMadeHistory(lsGet("made_history", []));
   }, []);
 
   useEffect(function(){
@@ -3151,26 +957,86 @@ function App() {
     lsSet("favs", next);
   }
 
-  // Filtered drinks list
-  function setFilter(key, value) {
-    setFilters(function(f){ var n=Object.assign({},f); n[key]=value; return n; });
+  function isIcedDrink(d) {
+    return d.temperature === "iced";
   }
-  function clearFilters(){ setFilters({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false}); }
-  var activeFilterCount = [filters.temp,filters.intensity,filters.sweetness,filters.texture,filters.brew].filter(function(v){return v!=="all";}).length + (filters.favs?1:0);
+
+  function isMilkyDrink(d) {
+    return d.texture !== "black" && d.milkType !== "None";
+  }
+
+  function isBoldDrink(d) {
+    return d.intensity === "strong";
+  }
+
+  function randomDrink(list) {
+    var pool = list && list.length ? list : DRINKS;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function surpriseMe() {
+    setPickerOpen(false);
+    openDrink(randomDrink(filteredDrinks));
+  }
+
+  function recommendDrink() {
+    var matches = DRINKS.filter(function(d){
+      var tempMatch = picker.temp === "iced" ? isIcedDrink(d) : !isIcedDrink(d);
+      var styleMatch = picker.style === "milky" ? isMilkyDrink(d) : !isMilkyDrink(d);
+      var intensityMatch = picker.intensity === "bold" ? isBoldDrink(d) : !isBoldDrink(d);
+      return tempMatch && styleMatch && intensityMatch;
+    });
+    if (!matches.length) {
+      matches = DRINKS.filter(function(d){
+        var tempMatch = picker.temp === "iced" ? isIcedDrink(d) : !isIcedDrink(d);
+        var styleMatch = picker.style === "milky" ? isMilkyDrink(d) : !isMilkyDrink(d);
+        return tempMatch && styleMatch;
+      });
+    }
+    setPickerOpen(false);
+    openDrink(randomDrink(matches));
+  }
+
+  // Filtered drinks list
   var filteredDrinks = DRINKS.filter(function(d){
     var matchCat = selCat === "all" || d.cat === selCat;
-    var haystack = [d.name,d.desc,d.sourceType,d.coffeeIntensity,d.sweetness,d.texture,d.brewMode,d.brewStyle,d.milkType].concat(d.tags||[]).join(" ").toLowerCase();
+    var haystack = [d.name,d.desc,d.brewStyle,d.milkType,d.intensity,d.sweetness,d.texture,d.origin].concat(d.tags||[],d.ingredients||[]).join(" ").toLowerCase();
     var matchQ = !searchQ || haystack.indexOf(searchQ.toLowerCase()) >= 0;
-    var tags=(d.tags||[]).map(function(x){return String(x).toLowerCase();});
-    var tempText=(d.cat+" "+tags.join(" ")+" "+(d.brewStyle||"")).toLowerCase();
-    var matchTemp = filters.temp==="all" || (filters.temp==="iced" ? (tempText.indexOf("iced")>=0||tempText.indexOf("cold")>=0) : (tempText.indexOf("iced")<0&&tempText.indexOf("cold")<0));
-    var matchIntensity = filters.intensity==="all" || String(d.coffeeIntensity||"").toLowerCase()===filters.intensity;
-    var matchSweet = filters.sweetness==="all" || String(d.sweetness||"").toLowerCase()===filters.sweetness;
-    var matchTexture = filters.texture==="all" || String(d.texture||"").toLowerCase().indexOf(filters.texture)>=0;
-    var matchBrew = filters.brew==="all" || String(d.brewMode||"").toLowerCase().indexOf(filters.brew)>=0 || String(d.brewStyle||"").toLowerCase().indexOf(filters.brew)>=0;
+    var matchTemp = filters.temp === "all" || d.temperature === filters.temp;
+    var matchIntensity = filters.intensity === "all" || d.intensity === filters.intensity;
+    var matchSweet = filters.sweetness === "all" || d.sweetness === filters.sweetness;
+    var matchTexture = filters.texture === "all" || d.texture === filters.texture;
+    var matchBrew = filters.brew === "all" || d.brewStyle === filters.brew;
     var matchFav = !filters.favs || favs.indexOf(d.id)>=0;
-    return matchCat && matchQ && matchTemp && matchIntensity && matchSweet && matchTexture && matchBrew && matchFav;
+    var matchPantry = !pantryOnly || (d.ingredientTags||[]).every(function(x){return pantry.indexOf(x)>=0;});
+    var matchPrefs = !prefs.hideCocktails || d.cat!=="cocktail";
+    return matchCat && matchQ && matchTemp && matchIntensity && matchSweet && matchTexture && matchBrew && matchFav && matchPantry && matchPrefs;
   }).slice().sort(function(a,b){return a.name.localeCompare(b.name);});
+  var activeFilterCount = Object.keys(filters).filter(function(k){return k==="favs"?filters[k]:filters[k]!=="all";}).length;
+
+  function updateFilter(key,value){var next=Object.assign({},filters);next[key]=value;setFilters(next);}
+  function clearFilters(){setFilters({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false});}
+
+  function updateBean(key,value){var next=Object.assign({},beanDraft);next[key]=value;setBeanDraft(next);}
+  function saveBeanLog(){
+    if(!beanDraft.bean.trim()) return;
+    var entry=Object.assign({},beanDraft,{id:Date.now(),date:new Date().toISOString()});
+    var next=[entry].concat(beanLogs);setBeanLogs(next);lsSet("bean_logs",next);setBeanDraft(emptyBean);setBeanFormOpen(false);
+  }
+  function deleteBeanLog(id){var next=beanLogs.filter(function(x){return x.id!==id;});setBeanLogs(next);lsSet("bean_logs",next);}
+  function togglePantry(item){var next=pantry.indexOf(item)>=0?pantry.filter(function(x){return x!==item;}):pantry.concat([item]);setPantry(next);lsSet("pantry",next);}
+  function markMaintenance(key){var next=Object.assign({},maintenance);next[key]=new Date().toISOString();setMaintenance(next);lsSet("maintenance",next);}
+  function updatePref(key,value){var next=Object.assign({},prefs);next[key]=value;setPrefs(next);lsSet("preferences",next);}
+  function logMade(d){var next=[{id:Date.now(),drinkId:d.id,date:new Date().toISOString()}].concat(madeHistory).slice(0,100);setMadeHistory(next);lsSet("made_history",next);}
+  function recipeText(d){return d.name+"\n\nIngredients\n- "+d.ingredients.join("\n- ")+"\n\nMethod\n"+d.machine.map(function(x,i){return (i+1)+". "+x;}).join("\n");}
+  function shareRecipe(d){var data={title:d.name,text:recipeText(d)};if(navigator.share){navigator.share(data).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(data.text);alert("Recipe copied to clipboard");}}
+  function displayIngredient(ing){
+    var out=ing;
+    if(prefs.milk==="Oat") out=out.replace(/whole milk|semi-skimmed milk|Milk/gi,"oat milk");
+    if(prefs.milk==="Coconut") out=out.replace(/whole milk|semi-skimmed milk|Milk/gi,"coconut milk");
+    if(prefs.units==="imperial") out=out.replace(/(\d+)ml/g,function(_,n){return (Number(n)/28.413).toFixed(1)+" fl oz";}).replace(/(\d+)g/g,function(_,n){return (Number(n)/28.35).toFixed(1)+" oz";});
+    return out;
+  }
 
   // ── HEADER ────────────────────────────────────────────────────────────────
   var header = (
@@ -3216,29 +1082,67 @@ function App() {
           placeholder="Search drinks…"
           style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,borderRadius:10,
             padding:"10px 14px",color:t.inpTxt,fontSize:14,marginBottom:12}}/>
-        {/* Filters */}
-        <div style={{display:"flex",gap:8,marginBottom:12}}>
-          <button onClick={function(){setFiltersOpen(!filtersOpen);}}
-            style={{flex:1,background:filtersOpen||activeFilterCount?t.accDim:t.btn,border:"1px solid "+(activeFilterCount?t.acc:t.btnBor),borderRadius:10,padding:"9px 12px",color:activeFilterCount?t.acc:t.txt,fontSize:12,fontWeight:700,textAlign:"left"}}>
-            ⚙️ Filters{activeFilterCount?" ("+activeFilterCount+")":""}
-          </button>
-          {activeFilterCount>0&&<button onClick={clearFilters} style={{background:t.btn,border:"1px solid "+t.btnBor,borderRadius:10,padding:"9px 12px",color:t.sub,fontSize:12}}>Clear</button>}
+        {/* Drink picker */}
+        <div style={{background:"linear-gradient(135deg,"+t.accDim+","+t.card+")",border:"1px solid "+t.acc,
+          borderRadius:14,padding:"14px",marginBottom:12}}>
+          <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:10}}>
+            <span style={{fontSize:28}}>🎲</span>
+            <div style={{flex:1}}>
+              <div style={{fontSize:15,fontWeight:800,color:t.txt}}>What should I make?</div>
+              <div style={{fontSize:11,color:t.bod,lineHeight:1.45}}>Choose by mood, or leave it entirely to chance.</div>
+            </div>
+          </div>
+          <div style={{display:"flex",gap:8}}>
+            <button onClick={function(){setPicker({temp:null,style:null,intensity:null});setPickerOpen(true);}}
+              style={{flex:1,background:t.acc,color:"#FFF",border:"1px solid "+t.acc,borderRadius:10,padding:"9px 8px",fontSize:12,fontWeight:800}}>
+              Help me choose
+            </button>
+            <button onClick={surpriseMe}
+              style={{flex:1,background:t.btn,color:t.txt,border:"1px solid "+t.btnBor,borderRadius:10,padding:"9px 8px",fontSize:12,fontWeight:700}}>
+              Surprise me
+            </button>
+          </div>
         </div>
-        {filtersOpen&&<div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:12,marginBottom:14}}>
-          {[
-            ["temp","Temperature",[["all","Any"],["hot","☕ Hot"],["iced","🧊 Iced / Cold"]]],
-            ["intensity","Coffee intensity",[["all","Any"],["mild","Mild"],["medium","Medium"],["strong","Strong"]]],
-            ["sweetness","Sweetness",[["all","Any"],["none","None"],["light","Light"],["medium","Medium"],["sweet","Sweet"]]],
-            ["texture","Texture",[["all","Any"],["black","Black"],["milky","Milky"],["creamy","Creamy"],["foamy","Foamy"]]],
-            ["brew","Brew type",[["all","Any"],["espresso","Espresso"],["coffee","Coffee / Filter"],["cold","Cold Pressed / Brew"]]]
-          ].map(function(group){return <div key={group[0]} style={{marginBottom:10}}>
-            <div style={{fontSize:10,color:t.lbl,textTransform:"uppercase",letterSpacing:"0.6px",fontWeight:700,marginBottom:6}}>{group[1]}</div>
-            <div style={{display:"flex",gap:5,flexWrap:"wrap"}}>{group[2].map(function(opt){var active=filters[group[0]]===opt[0];return <button key={opt[0]} onClick={function(){setFilter(group[0],opt[0]);}} style={{background:active?t.acc:t.tag,color:active?"#FFF":t.tagTxt,border:"1px solid "+(active?t.acc:t.tagBor),borderRadius:18,padding:"5px 9px",fontSize:11}}>{opt[1]}</button>;})}</div>
-          </div>;})}
-          <button onClick={function(){setFilter("favs",!filters.favs);}} style={{width:"100%",background:filters.favs?t.accDim:t.tag,color:filters.favs?t.acc:t.tagTxt,border:"1px solid "+(filters.favs?t.acc:t.tagBor),borderRadius:9,padding:"8px 10px",fontSize:12,fontWeight:filters.favs?700:400}}>★ Favourites only</button>
-        </div>}
+        {/* Advanced filters */}
+        <div style={{marginBottom:12}}>
+          <div style={{display:"flex",gap:8}}>
+            <button onClick={function(){setFiltersOpen(!filtersOpen);}} style={{flex:1,background:t.btn,border:"1px solid "+t.btnBor,
+              color:t.txt,borderRadius:10,padding:"9px 12px",fontSize:12,fontWeight:700,textAlign:"left"}}>
+              ⚙️ Filters {activeFilterCount>0?"("+activeFilterCount+")":""} <span style={{float:"right",color:t.sub}}>{filtersOpen?"▴":"▾"}</span>
+            </button>
+            {activeFilterCount>0&&<button onClick={clearFilters} style={{background:"none",border:"1px solid "+t.cardBor,color:t.acc,borderRadius:10,padding:"9px 12px",fontSize:11,fontWeight:700}}>Clear</button>}
+          </div>
+          {filtersOpen&&<div className="fi" style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:12,marginTop:7}}>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
+              {[
+                {key:"temp",label:"HOT OR ICED",opts:[["all","Any"],["hot","Hot"],["iced","Iced"]]},
+                {key:"intensity",label:"INTENSITY",opts:[["all","Any"],["mild","Mild"],["medium","Medium"],["strong","Strong"]]},
+                {key:"sweetness",label:"SWEETNESS",opts:[["all","Any"],["none","None"],["light","Light"],["medium","Medium"],["sweet","Sweet"]]},
+                {key:"texture",label:"TEXTURE",opts:[["all","Any"],["black","Black"],["milky","Milky"],["creamy","Creamy"],["foamy","Foamy"],["sparkling","Sparkling"]]},
+                {key:"brew",label:"BREW TYPE",opts:[["all","Any"],["Espresso","Espresso"],["Cold Pressed","Cold Pressed"],["Cold Brew","Cold Brew"],["Filter","Filter"],["Milk Only","No coffee"]]}
+              ].map(function(f){return <label key={f.key}><div style={{fontSize:9,color:t.lbl,fontWeight:800,marginBottom:4}}>{f.label}</div>
+                <select value={filters[f.key]} onChange={function(e){updateFilter(f.key,e.target.value);}} style={{width:"100%",background:t.inp,color:t.inpTxt,border:"1px solid "+t.inpBor,borderRadius:8,padding:"8px",fontSize:12}}>
+                  {f.opts.map(function(o){return <option key={o[0]} value={o[0]}>{o[1]}</option>;})}
+                </select></label>;})}
+              <button onClick={function(){updateFilter("favs",!filters.favs);}} style={{alignSelf:"end",background:filters.favs?t.acc:t.btn,color:filters.favs?"#FFF":t.txt,border:"1px solid "+(filters.favs?t.acc:t.btnBor),borderRadius:8,padding:"8px",fontSize:12,fontWeight:700}}>★ Favourites only</button>
+            </div>
+          </div>}
+        </div>
+        {/* Pantry finder */}
+        <div style={{marginBottom:12}}>
+          <button onClick={function(){setPantryOpen(!pantryOpen);}} style={{width:"100%",background:pantryOnly?t.accDim:t.btn,border:"1px solid "+(pantryOnly?t.acc:t.btnBor),color:t.txt,borderRadius:10,padding:"9px 12px",fontSize:12,fontWeight:700,textAlign:"left"}}>
+            🧺 My Ingredients {pantry.length>0?"("+pantry.length+")":""}<span style={{float:"right",color:t.sub}}>{pantryOpen?"▴":"▾"}</span>
+          </button>
+          {pantryOpen&&<div className="fi" style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:12,marginTop:7}}>
+            <div style={{fontSize:11,color:t.bod,lineHeight:1.5,marginBottom:9}}>Select what you have. Coffee beans, water and ice are treated as basics.</div>
+            <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+              {["milk","whole milk","oat milk","coconut milk","cream","vanilla syrup","caramel syrup","chocolate sauce","white chocolate","pistachio syrup","hazelnut syrup","maple syrup","brown sugar syrup","honey","cinnamon","chai","matcha","condensed milk","tonic water","orange"].map(function(item){var on=pantry.indexOf(item)>=0;return <button key={item} onClick={function(){togglePantry(item);}} style={{background:on?t.acc:t.tag,color:on?"#FFF":t.tagTxt,border:"1px solid "+(on?t.acc:t.tagBor),borderRadius:16,padding:"5px 9px",fontSize:10,textTransform:"capitalize"}}>{on?"✓ ":""}{item}</button>;})}
+            </div>
+            <button onClick={function(){setPantryOnly(!pantryOnly);}} style={{width:"100%",marginTop:10,background:pantryOnly?t.acc:t.btn,color:pantryOnly?"#FFF":t.txt,border:"1px solid "+(pantryOnly?t.acc:t.btnBor),borderRadius:9,padding:"9px",fontSize:11,fontWeight:800}}>{pantryOnly?"Showing drinks I can make":"Show drinks I can make"}</button>
+          </div>}
+        </div>
         {/* Category chips */}
-        <div style={{display:"flex",gap:6,marginBottom:8,flexWrap:"wrap"}}>
+        <div style={{display:"flex",gap:6,marginBottom:14,flexWrap:"wrap"}}>
           {CATS.map(function(c){
             var active = selCat===c.id;
             return(
@@ -3251,7 +1155,7 @@ function App() {
             );
           })}
         </div>
-        <div style={{fontSize:11,color:t.sub,marginBottom:12}}>{filteredDrinks.length} {filteredDrinks.length===1?"drink":"drinks"} found</div>
+        <div style={{fontSize:11,color:t.sub,margin:"-6px 2px 10px"}}>{filteredDrinks.length} {filteredDrinks.length===1?"drink":"drinks"} found</div>
         {/* Drink cards */}
         <div style={{display:"flex",flexDirection:"column",gap:10}}>
           {filteredDrinks.map(function(drink){
@@ -3267,6 +1171,7 @@ function App() {
                     <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:3}}>
                       <div style={{fontSize:15,fontWeight:700,color:t.txt}}>{drink.name}</div>
                       {drink.official&&<span style={{fontSize:9,background:t.accDim,color:t.acc,border:"1px solid "+t.acc+"44",borderRadius:10,padding:"1px 6px",fontWeight:700}}>OFFICIAL</span>}
+                      {!drink.official&&drink.origin&&<span style={{fontSize:9,background:t.tag,color:t.tagTxt,border:"1px solid "+t.tagBor,borderRadius:10,padding:"1px 6px",fontWeight:700}}>{drink.origin.toUpperCase()}</span>}
                       {isFav&&<span style={{color:t.acc,fontSize:12}}>★</span>}
                     </div>
                     <div style={{fontSize:12,color:t.bod,lineHeight:1.5,marginBottom:6,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{drink.desc}</div>
@@ -3275,6 +1180,9 @@ function App() {
                       <span style={{fontSize:11,color:t.sub}}>· {drink.difficulty}</span>
                       {drink.froth&&<span style={{fontSize:11,color:t.sub}}>· 🥛 {drink.froth}</span>}
                       {rated&&<span style={{fontSize:14}}>{rated}</span>}
+                    </div>
+                    <div style={{display:"flex",gap:5,flexWrap:"wrap",marginTop:7}}>
+                      {[drink.temperature,drink.brewStyle,drink.intensity].map(function(x){return x&&<span key={x} style={{fontSize:9,color:t.tagTxt,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:10,padding:"2px 6px",textTransform:"capitalize"}}>{x}</span>;})}
                     </div>
                   </div>
                   <span style={{color:t.sub,fontSize:18,flexShrink:0}}>›</span>
@@ -3288,6 +1196,44 @@ function App() {
               <div style={{fontSize:14}}>No drinks found</div>
             </div>
           )}
+        </div>
+      </div>
+    );
+  }
+
+  function DrinkPicker() {
+    if (!pickerOpen) return null;
+    var complete = picker.temp && picker.style && picker.intensity;
+    function Choice(props) {
+      var active = picker[props.field] === props.value;
+      return <button onClick={function(){var next=Object.assign({},picker);next[props.field]=props.value;setPicker(next);}}
+        style={{flex:1,minWidth:0,background:active?t.acc:t.btn,color:active?"#FFF":t.txt,
+          border:"1px solid "+(active?t.acc:t.btnBor),borderRadius:10,padding:"10px 5px",fontSize:11,fontWeight:active?800:600}}>
+        <span style={{display:"block",fontSize:20,marginBottom:3}}>{props.icon}</span>{props.label}
+      </button>;
+    }
+    return (
+      <div onClick={function(){setPickerOpen(false);}} style={{position:"fixed",inset:0,zIndex:60,background:"rgba(0,0,0,0.68)",
+        display:"flex",alignItems:"flex-end",justifyContent:"center",padding:"16px 12px max(16px,env(safe-area-inset-bottom,16px))"}}>
+        <div onClick={function(e){e.stopPropagation();}} className="fi" style={{width:"100%",maxWidth:520,background:t.card,
+          border:"1px solid "+t.cardBor,borderRadius:18,padding:16,maxHeight:"88vh",overflowY:"auto"}}>
+          <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",gap:12,marginBottom:15}}>
+            <div><div style={{fontSize:17,fontWeight:800,color:t.txt}}>What are you in the mood for?</div>
+              <div style={{fontSize:11,color:t.sub,marginTop:3}}>Three quick choices. We’ll pick a matching drink.</div></div>
+            <button onClick={function(){setPickerOpen(false);}} aria-label="Close" style={{background:t.btn,border:"1px solid "+t.btnBor,
+              color:t.sub,borderRadius:20,width:30,height:30,fontSize:16,flexShrink:0}}>×</button>
+          </div>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:7}}>1. Hot or iced?</div>
+          <div style={{display:"flex",gap:7,marginBottom:15}}><Choice field="temp" value="hot" icon="♨️" label="Hot"/><Choice field="temp" value="iced" icon="🧊" label="Iced"/></div>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:7}}>2. Milky or black?</div>
+          <div style={{display:"flex",gap:7,marginBottom:15}}><Choice field="style" value="milky" icon="🥛" label="Milky"/><Choice field="style" value="black" icon="☕" label="Black"/></div>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:7}}>3. Easy-going or bold?</div>
+          <div style={{display:"flex",gap:7,marginBottom:16}}><Choice field="intensity" value="mild" icon="🌤️" label="Easy-going"/><Choice field="intensity" value="bold" icon="⚡" label="Bold"/></div>
+          <button disabled={!complete} onClick={recommendDrink} style={{width:"100%",background:complete?t.acc:t.btn,
+            color:complete?"#FFF":t.sub,border:"1px solid "+(complete?t.acc:t.btnBor),borderRadius:11,padding:"11px",fontSize:13,fontWeight:800,
+            opacity:complete?1:0.65,cursor:complete?"pointer":"default"}}>
+            {complete?"Find my drink →":"Choose one option from each row"}
+          </button>
         </div>
       </div>
     );
@@ -3342,35 +1288,26 @@ function App() {
           <div style={{fontSize:10,color:t.acc,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.8px",marginBottom:8}}>⚙️ Quick settings</div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
             {d.grind&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>GRIND</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.grind}</div></div>}
+            {d.brewStyle&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>BREW</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.brewStyle}</div></div>}
+            {d.basket&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>BASKET</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.basket}</div></div>}
             {d.strength&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>STRENGTH</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.strength}</div></div>}
             {d.froth&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>FROTH</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.froth}</div></div>}
             {d.size&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>SIZE</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.size}</div></div>}
-            {d.brewMode&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>BREW MODE</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.brewMode}</div></div>}
-            {d.brewStyle&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>BREW STYLE</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.brewStyle}</div></div>}
-            {d.basket&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>BASKET</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.basket}</div></div>}
-            {d.milkType&&<div><div style={{fontSize:10,color:t.sub,marginBottom:2}}>MILK</div><div style={{fontSize:13,fontWeight:700,color:t.txt}}>{d.milkType}</div></div>}
           </div>
+          {prefs.decaf&&<div style={{fontSize:10,color:t.acc,marginTop:8}}>🌙 Decaf preference active — use decaffeinated beans for this recipe.</div>}
         </div>
 
-        {/* Taste profile */}
-        {(d.coffeeIntensity||d.sweetness||d.texture||d.sourceType)&&(
-          <div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:"12px 14px",marginBottom:14}}>
-            <div style={{fontSize:10,color:t.lbl,textTransform:"uppercase",letterSpacing:"0.8px",marginBottom:8}}>👅 Taste & origin</div>
-            <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-              {d.coffeeIntensity&&<span style={{fontSize:11,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:12,padding:"4px 8px",color:t.tagTxt}}>Coffee: {d.coffeeIntensity}</span>}
-              {d.sweetness&&<span style={{fontSize:11,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:12,padding:"4px 8px",color:t.tagTxt}}>Sweetness: {d.sweetness}</span>}
-              {d.texture&&<span style={{fontSize:11,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:12,padding:"4px 8px",color:t.tagTxt}}>Texture: {d.texture}</span>}
-              {d.sourceType&&<span style={{fontSize:11,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:12,padding:"4px 8px",color:t.tagTxt}}>Origin: {d.sourceType}</span>}
-            </div>
-          </div>
-        )}
+        <div style={{display:"flex",gap:8,marginBottom:14}}>
+          <button onClick={function(){logMade(d);}} style={{flex:1,background:t.acc,color:"#FFF",border:"1px solid "+t.acc,borderRadius:10,padding:"9px 6px",fontSize:11,fontWeight:800}}>✓ I made this</button>
+          <button onClick={function(){shareRecipe(d);}} style={{flex:1,background:t.btn,color:t.txt,border:"1px solid "+t.btnBor,borderRadius:10,padding:"9px 6px",fontSize:11,fontWeight:700}}>↗ Share / copy</button>
+        </div>
 
         {/* Ingredients */}
         <Acc sid="ingredients" icon="🧾" label="Ingredients">
           {d.ingredients.map(function(ing,i){return(
             <div key={i} style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:8,padding:"6px 0",borderBottom:"1px solid "+t.cardBor}}>
               <span style={{color:t.acc,fontSize:16,flexShrink:0,marginTop:1}}>•</span>
-              <span style={{fontSize:13,color:t.txt}}>{ing}</span>
+              <span style={{fontSize:13,color:t.txt}}>{displayIngredient(ing)}</span>
             </div>
           );})}
         </Acc>
@@ -3529,6 +1466,24 @@ function App() {
             </div>
           </div>
         );})}
+
+        <div style={{fontSize:14,fontWeight:700,color:t.txt,margin:"20px 0 10px"}}>🧹 Maintenance Tracker</div>
+        {[{key:"steam",icon:"🥛",label:"Steam wand cleaned"},{key:"group",icon:"☕",label:"Group head cleaned"},{key:"grinder",icon:"⚙️",label:"Grinder cleaned"},{key:"descale",icon:"💧",label:"Machine descaled"}].map(function(m){return <div key={m.key} style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:"11px 12px",marginBottom:8,display:"flex",alignItems:"center",gap:10}}>
+          <span style={{fontSize:20}}>{m.icon}</span><div style={{flex:1}}><div style={{fontSize:12,fontWeight:700,color:t.txt}}>{m.label}</div><div style={{fontSize:10,color:t.sub}}>{maintenance[m.key]?"Last recorded "+new Date(maintenance[m.key]).toLocaleDateString("en-GB"):"Not recorded yet"}</div></div>
+          <button onClick={function(){markMaintenance(m.key);}} style={{background:t.btn,border:"1px solid "+t.btnBor,color:t.acc,borderRadius:8,padding:"6px 9px",fontSize:10,fontWeight:800}}>Done today</button>
+        </div>;})}
+
+        <div style={{fontSize:14,fontWeight:700,color:t.txt,margin:"20px 0 10px"}}>🔧 Troubleshooting</div>
+        {[
+          ["Espresso pours too quickly","Use the finer grind recommended by Barista Assist, check the dose and ensure the puck is evenly tamped."],
+          ["Espresso pours too slowly","Move slightly coarser, check the basket is not overfilled and clean blocked basket holes."],
+          ["Coffee tastes sour","The shot may be under-extracted. Try a finer grind, a slightly longer yield or the higher brew temperature for lighter beans."],
+          ["Coffee tastes bitter","The shot may be over-extracted. Try a coarser grind, a shorter yield or a lower temperature for darker beans."],
+          ["Milk will not froth","Use cold fresh milk, keep within the jug markings, check the correct milk type and clean the wand immediately."],
+          ["Drink is not hot enough","Preheat the cup and portafilter, use the correct cup size and select the appropriate brew temperature."],
+          ["Grinder is not dispensing","Check the hopper is locked, remove oily build-up with a dry brush and never introduce water into the grinder."],
+          ["Barista Assist keeps changing","Allow at least two brews after changing beans; roast age, humidity and bean density can alter the recommendation."]
+        ].map(function(x,i){return <details key={i} style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:10,padding:"10px 12px",marginBottom:7}}><summary style={{fontSize:12,fontWeight:700,color:t.txt,cursor:"pointer"}}>{x[0]}</summary><div style={{fontSize:11,color:t.bod,lineHeight:1.6,marginTop:7}}>{x[1]}</div></details>;})}
       </div>
     );
   }
@@ -3603,6 +1558,21 @@ function App() {
             For manual milk steaming: pull the steam wand out, select the lowest froth level, then hold the START FROTH button for 3 seconds. You can now steam manually. Great for cortados, flat whites and latte art practice.
           </div>
         </div>
+
+        <div style={{fontSize:14,fontWeight:700,color:t.txt,margin:"20px 0 10px"}}>📚 Coffee Glossary</div>
+        {[
+          ["Dose","The dry weight of ground coffee placed in the basket."],["Yield","The weight of brewed espresso in the cup."],
+          ["Brew ratio","The relationship between dose and yield. An 18g dose producing 36g espresso is a 1:2 ratio."],
+          ["Extraction time","How long water flows through the coffee puck. Use taste and Barista Assist alongside time."],
+          ["Crema","The golden foam on fresh espresso, created by oils and carbon dioxide released during brewing."],
+          ["Channeling","Water finding an easy route through the puck, causing uneven extraction. Even distribution and tamping help."],
+          ["Ristretto","A shorter, more concentrated espresso made with a lower final yield."],
+          ["Lungo","A longer espresso made with more water passing through the coffee."],
+          ["Microfoam","Very fine, glossy milk foam used for smooth drinks and latte art."],
+          ["Cold-pressed espresso","A concentrated coffee brewed at a lower temperature for smooth iced drinks."],
+          ["Bloom","The initial release of gas when water first contacts freshly ground coffee."],
+          ["Barista Assist","The machine’s guidance for grind size and dosing based on recent brews."]
+        ].map(function(x,i){return <details key={i} style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:10,padding:"10px 12px",marginBottom:7}}><summary style={{fontSize:12,fontWeight:700,color:t.txt,cursor:"pointer"}}>{x[0]}</summary><div style={{fontSize:11,color:t.bod,lineHeight:1.6,marginTop:7}}>{x[1]}</div></details>;})}
       </div>
     );
   }
@@ -3614,7 +1584,41 @@ function App() {
     return(
       <div style={{flex:1,width:"100%",maxWidth:900,margin:"0 auto",padding:"14px 12px",paddingBottom:90}} className="fi">
         <div style={{fontSize:17,fontWeight:800,color:t.txt,marginBottom:4}}>My Log</div>
-        <div style={{fontSize:12,color:t.sub,marginBottom:16}}>Your ratings and favourites</div>
+        <div style={{fontSize:12,color:t.sub,marginBottom:16}}>Your beans, dial-in results, ratings and favourites</div>
+
+        <div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:14,padding:14,marginBottom:18}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginBottom:beanFormOpen?12:0}}>
+            <div><div style={{fontSize:14,fontWeight:800,color:t.txt}}>🫘 Bean & espresso journal</div><div style={{fontSize:11,color:t.sub,marginTop:2}}>{beanLogs.length} {beanLogs.length===1?"dial-in":"dial-ins"} saved</div></div>
+            <button onClick={function(){setBeanFormOpen(!beanFormOpen);}} style={{background:t.acc,color:"#FFF",border:"none",borderRadius:9,padding:"8px 12px",fontSize:11,fontWeight:800}}>{beanFormOpen?"Cancel":"+ Add dial-in"}</button>
+          </div>
+          {beanFormOpen&&<div className="fi">
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
+              {[
+                ["bean","BEAN / BLEND","e.g. House Espresso","text"],["roaster","ROASTER","e.g. Crosby Coffee","text"],
+                ["grind","GRIND SETTING","e.g. 12","text"],["seconds","EXTRACTION","e.g. 28 sec","text"],
+                ["dose","DOSE (G)","18","number"],["yield","YIELD (G)","36","number"]
+              ].map(function(f){return <label key={f[0]}><div style={{fontSize:9,color:t.lbl,fontWeight:800,marginBottom:4}}>{f[1]}</div><input type={f[3]} value={beanDraft[f[0]]} placeholder={f[2]} onChange={function(e){updateBean(f[0],e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,borderRadius:8,padding:"8px",color:t.inpTxt,fontSize:12}}/></label>;})}
+              <label><div style={{fontSize:9,color:t.lbl,fontWeight:800,marginBottom:4}}>ROAST</div><select value={beanDraft.roast} onChange={function(e){updateBean("roast",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,borderRadius:8,padding:"8px",color:t.inpTxt,fontSize:12}}><option>Light</option><option>Medium</option><option>Dark</option></select></label>
+              <label><div style={{fontSize:9,color:t.lbl,fontWeight:800,marginBottom:4}}>RESULT</div><select value={beanDraft.rating} onChange={function(e){updateBean("rating",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,borderRadius:8,padding:"8px",color:t.inpTxt,fontSize:12}}><option value="👍">👍 Good</option><option value="⭐">⭐ Excellent</option><option value="👎">👎 Needs work</option></select></label>
+            </div>
+            <textarea value={beanDraft.notes} onChange={function(e){updateBean("notes",e.target.value);}} placeholder="Taste notes or changes for next time…" style={{width:"100%",marginTop:8,background:t.inp,border:"1px solid "+t.inpBor,borderRadius:8,padding:"9px",color:t.inpTxt,fontSize:12,minHeight:64}}/>
+            <button disabled={!beanDraft.bean.trim()} onClick={saveBeanLog} style={{width:"100%",marginTop:8,background:t.acc,color:"#FFF",border:"none",borderRadius:9,padding:"9px",fontSize:12,fontWeight:800,opacity:beanDraft.bean.trim()?1:.55}}>Save dial-in</button>
+          </div>}
+        </div>
+
+        {beanLogs.length>0&&<div style={{marginBottom:20}}>
+          <div style={{fontSize:13,fontWeight:700,color:t.txt,marginBottom:10}}>⚙️ Recent dial-ins</div>
+          {beanLogs.slice(0,8).map(function(x){return <div key={x.id} style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:"12px 14px",marginBottom:8}}>
+            <div style={{display:"flex",justifyContent:"space-between",gap:8}}><div><div style={{fontSize:14,fontWeight:800,color:t.txt}}>{x.bean} {x.rating}</div><div style={{fontSize:11,color:t.sub}}>{x.roaster||"Unknown roaster"} · {x.roast} roast</div></div><button onClick={function(){deleteBeanLog(x.id);}} style={{background:"none",border:"none",color:t.sub,fontSize:16}}>×</button></div>
+            <div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:8}}>{[["Grind",x.grind||"—"],["Dose",x.dose+"g"],["Yield",x.yield+"g"],["Time",x.seconds||"—"]].map(function(v){return <span key={v[0]} style={{fontSize:10,color:t.tagTxt,background:t.tag,border:"1px solid "+t.tagBor,borderRadius:10,padding:"3px 7px"}}>{v[0]}: {v[1]}</span>;})}</div>
+            {x.notes&&<div style={{fontSize:11,color:t.bod,lineHeight:1.5,marginTop:7}}>{x.notes}</div>}
+          </div>;})}
+        </div>}
+
+        {madeHistory.length>0&&<div style={{marginBottom:20}}>
+          <div style={{fontSize:13,fontWeight:700,color:t.txt,marginBottom:10}}>🕒 Recently made</div>
+          {madeHistory.slice(0,6).map(function(h){var d=DRINKS.find(function(x){return x.id===h.drinkId;});if(!d)return null;return <button key={h.id} onClick={function(){setTab("drinks");openDrink(d);}} style={{width:"100%",background:t.card,border:"1px solid "+t.cardBor,borderRadius:12,padding:"10px 12px",textAlign:"left",marginBottom:7,display:"flex",alignItems:"center",gap:10}}><span style={{fontSize:20}}>{d.emoji}</span><div style={{flex:1}}><div style={{fontSize:12,fontWeight:700,color:t.txt}}>{d.name}</div><div style={{fontSize:10,color:t.sub}}>{new Date(h.date).toLocaleDateString("en-GB")}</div></div><span style={{color:t.sub}}>›</span></button>;})}
+        </div>}
 
         {favDrinks.length>0&&(
           <div style={{marginBottom:20}}>
@@ -3715,6 +1719,22 @@ function App() {
           </a>
         );})}
 
+        {/* Preferences */}
+        <div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:14,padding:"12px 14px",marginTop:12,marginBottom:10}}>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:10}}>⚙️ Preferences & Accessibility</div>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:10}}>
+            <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>MEASUREMENTS</div><select value={prefs.units} onChange={function(e){updatePref("units",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option value="metric">Metric</option><option value="imperial">Imperial</option></select></label>
+            <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>PREFERRED MILK</div><select value={prefs.milk} onChange={function(e){updatePref("milk",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option>Any</option><option>Dairy</option><option>Oat</option><option>Coconut</option></select></label>
+          </div>
+          {[
+            ["decaf","Prefer decaf","Recipes remain the same; use decaffeinated beans"],
+            ["hideCocktails","Hide cocktails","Remove alcoholic drinks from browsing and recommendations"],
+            ["largeText","Larger display","Increase the overall app display size"],
+            ["reducedMotion","Reduce motion","Disable interface animations"],
+            ["highContrast","Higher contrast","Increase visual contrast throughout the app"]
+          ].map(function(p){return <label key={p[0]} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderTop:"1px solid "+t.cardBor,cursor:"pointer"}}><input type="checkbox" checked={!!prefs[p[0]]} onChange={function(e){updatePref(p[0],e.target.checked);}}/><div><div style={{fontSize:11,fontWeight:700,color:t.txt}}>{p[1]}</div><div style={{fontSize:10,color:t.sub,lineHeight:1.4}}>{p[2]}</div></div></label>;})}
+        </div>
+
         {/* Add to home screen */}
         <div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:14,padding:"12px 14px",marginTop:12,marginBottom:10}}>
           <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:8}}>📱 Add to Home Screen</div>
@@ -3750,9 +1770,10 @@ function App() {
   else if (tab==="about")  pageContent = AboutPage();
 
   return(
-    <div style={{background:t.app,minHeight:"100vh",display:"flex",flexDirection:"column",color:t.txt,transition:"background 0.25s"}}>
+    <div className={prefs.reducedMotion?"reduce-motion":""} style={{background:t.app,minHeight:"100vh",display:"flex",flexDirection:"column",color:t.txt,transition:"background 0.25s",zoom:prefs.largeText?1.08:1,filter:prefs.highContrast?"contrast(1.16)":"none"}}>
       {header}
       {pageContent}
+      {DrinkPicker()}
       {/* NAV BAR */}
       <div style={{position:"fixed",bottom:0,left:0,right:0,background:t.nav,
         borderTop:"1px solid "+t.navBor,display:"flex",zIndex:20,
@@ -3784,12 +1805,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(
 (function(){
   var i192 = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMUEwQTAwIi8+PHRleHQgeD0iOTYiIHk9IjEyOCIgZm9udC1zaXplPSIxMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcHBsZSBDb2xvciBFbW9qaSxTZWdvZSBVSSBFbW9qaSxzYW5zLXNlcmlmIj7imJU8L3RleHQ+PC9zdmc+";
   var i512 = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFBMEEwMCIvPjx0ZXh0IHg9IjI1NiIgeT0iMzQwIiBmb250LXNpemU9IjMwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFwcGxlIENvbG9yIEVtb2ppLFNlZ29lIFVJIEVtb2ppLHNhbnMtc2VyaWYiPuKYlTwvdGV4dD48L3N2Zz4=";
-  var m = {name:"Ninja Luxe Café Guide",short_name:"Luxe Café",start_url:"/",
+  var m = {name:"Ninja Luxe Café Guide",short_name:"Luxe Café",start_url:"./",scope:"./",
     display:"standalone",background_color:"#1A0A00",theme_color:"#1A0A00",orientation:"portrait",
     icons:[{src:i192,sizes:"192x192",type:"image/svg+xml",purpose:"any maskable"},
            {src:i512,sizes:"512x512",type:"image/svg+xml",purpose:"any maskable"}]};
   var b = new Blob([JSON.stringify(m)],{type:"application/manifest+json"});
   var l = document.createElement("link");l.rel="manifest";l.href=URL.createObjectURL(b);document.head.appendChild(l);
+  if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
+    window.addEventListener("load",function(){navigator.serviceWorker.register("./ninja-luxecafe-sw.js").catch(function(){});});
+  }
 })();
 </script>
 </body>
