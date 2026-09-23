@@ -43,7 +43,7 @@ var DARK = {
   card:"#1C0D02", cardBor:"#3A1A00", acc:"#C47A2A", accDim:"rgba(196,122,42,0.15)",
   inp:"#1C0D02", inpBor:"#3A1A00", inpTxt:"#F5E6D0",
   tag:"#251206", tagBor:"#3A1A00", tagTxt:"#9A7A5A",
-  nav:"#110800", navBor:"#2A1200", navTxt:"#5A3A1A", navAct:"#C47A2A",
+  nav:"#110800", navBor:"#4A260C", navTxt:"#C8A882", navAct:"#F0A24A",
   btn:"#1C0D02", btnBor:"#3A1A00",
   detBg:"#1C0D02", detBor:"#3A1A00",
   note:"#B09070", stTim:"#C47A2A",
@@ -56,7 +56,7 @@ var LIGHT = {
   card:"#FFF", cardBor:"#E8C89A", acc:"#B06820", accDim:"rgba(176,104,32,0.1)",
   inp:"#FFF", inpBor:"#D8B880", inpTxt:"#1A0A00",
   tag:"#FDF0DE", tagBor:"#E8C89A", tagTxt:"#8A6A4A",
-  nav:"#FFF3E0", navBor:"#E8C89A", navTxt:"#C8A882", navAct:"#B06820",
+  nav:"#FFF3E0", navBor:"#E8C89A", navTxt:"#6F4E2C", navAct:"#9A5418",
   btn:"#FDF0DE", btnBor:"#D8B880",
   detBg:"#FFF", detBor:"#E8C89A",
   note:"#7A5A3A", stTim:"#B06820",
@@ -898,9 +898,16 @@ function App() {
   var s20=useState(false);    var pantryOpen=s20[0]; var setPantryOpen=s20[1];
   var s21=useState(false);    var pantryOnly=s21[0]; var setPantryOnly=s21[1];
   var s22=useState({});       var maintenance=s22[0]; var setMaintenance=s22[1];
-  var defaultPrefs={units:"metric",milk:"Any",decaf:false,hideCocktails:false,largeText:false,reducedMotion:false,highContrast:false};
+  var defaultPrefs={units:"metric",milk:"Any",coffeeStrength:"Any",textSize:"standard",decaf:false,hideCocktails:false,reducedMotion:false,highContrast:false};
   var s23=useState(defaultPrefs); var prefs=s23[0]; var setPrefs=s23[1];
   var s24=useState([]); var madeHistory=s24[0]; var setMadeHistory=s24[1];
+  var s25=useState(1); var recipeServings=s25[0]; var setRecipeServings=s25[1];
+  var s26=useState({ingredients:{},steps:{}}); var recipeChecks=s26[0]; var setRecipeChecks=s26[1];
+  var s27=useState(false); var wakeActive=s27[0]; var setWakeActive=s27[1];
+  var s28=useState(null); var wakeLock=s28[0]; var setWakeLock=s28[1];
+  var s29=useState(""); var dataMessage=s29[0]; var setDataMessage=s29[1];
+  var s30=useState(navigator.onLine); var isOnline=s30[0]; var setIsOnline=s30[1];
+  var s31=useState(false); var offlineReady=s31[0]; var setOfflineReady=s31[1];
 
   var isDark = themeMode === "dark";
   var t = isDark ? DARK : LIGHT;
@@ -920,6 +927,17 @@ function App() {
     lsSet("theme", themeMode);
   }, [themeMode]);
 
+  useEffect(function(){
+    function online(){setIsOnline(true);}function offline(){setIsOnline(false);}
+    window.addEventListener("online",online);window.addEventListener("offline",offline);
+    if("serviceWorker" in navigator){navigator.serviceWorker.ready.then(function(){setOfflineReady(true);}).catch(function(){});}
+    return function(){window.removeEventListener("online",online);window.removeEventListener("offline",offline);};
+  },[]);
+
+  useEffect(function(){
+    if((!selDrink||tab!=="drinks")&&wakeLock){wakeLock.release().catch(function(){});setWakeLock(null);setWakeActive(false);}
+  },[selDrink,tab,wakeLock]);
+
   // Always start a newly selected area or recipe at the top. The second frame
   // handles iOS Safari after its address bar has finished resizing the viewport.
   useEffect(function(){
@@ -932,6 +950,8 @@ function App() {
   function openDrink(drink) {
     setSelDrink(drink);
     setExpandedSecs({});
+    setRecipeServings(drink.serves||1);
+    setRecipeChecks({ingredients:{},steps:{}});
     var saved = lsGet("note_"+drink.id, "");
     setNoteDraft(saved);
     setNoteEdit(false);
@@ -986,7 +1006,8 @@ function App() {
 
   function surpriseMe() {
     setPickerOpen(false);
-    openDrink(randomDrink(filteredDrinks));
+    var pool=filteredDrinks.filter(function(d){return prefs.coffeeStrength==="Any"||d.intensity===prefs.coffeeStrength.toLowerCase();});
+    openDrink(randomDrink(pool.length?pool:filteredDrinks));
   }
 
   function recommendDrink() {
@@ -994,13 +1015,15 @@ function App() {
       var tempMatch = picker.temp === "iced" ? isIcedDrink(d) : !isIcedDrink(d);
       var styleMatch = picker.style === "milky" ? isMilkyDrink(d) : !isMilkyDrink(d);
       var intensityMatch = picker.intensity === "bold" ? isBoldDrink(d) : !isBoldDrink(d);
-      return tempMatch && styleMatch && intensityMatch;
+      var prefMatch = prefs.coffeeStrength==="Any" || d.intensity===prefs.coffeeStrength.toLowerCase();
+      return tempMatch && styleMatch && intensityMatch && prefMatch;
     });
     if (!matches.length) {
       matches = DRINKS.filter(function(d){
         var tempMatch = picker.temp === "iced" ? isIcedDrink(d) : !isIcedDrink(d);
         var styleMatch = picker.style === "milky" ? isMilkyDrink(d) : !isMilkyDrink(d);
-        return tempMatch && styleMatch;
+        var prefMatch = prefs.coffeeStrength==="Any" || d.intensity===prefs.coffeeStrength.toLowerCase();
+        return tempMatch && styleMatch && prefMatch;
       });
     }
     setPickerOpen(false);
@@ -1027,6 +1050,7 @@ function App() {
 
   function updateFilter(key,value){var next=Object.assign({},filters);next[key]=value;setFilters(next);}
   function clearFilters(){setFilters({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false,official:false});}
+  function resetDiscovery(){clearFilters();setSearchQ("");setSelCat("all");setPantryOnly(false);}
 
   function updateBean(key,value){var next=Object.assign({},beanDraft);next[key]=value;setBeanDraft(next);}
   function saveBeanLog(){
@@ -1039,10 +1063,37 @@ function App() {
   function markMaintenance(key){var next=Object.assign({},maintenance);next[key]=new Date().toISOString();setMaintenance(next);lsSet("maintenance",next);}
   function updatePref(key,value){var next=Object.assign({},prefs);next[key]=value;setPrefs(next);lsSet("preferences",next);}
   function logMade(d){var next=[{id:Date.now(),drinkId:d.id,date:new Date().toISOString()}].concat(madeHistory).slice(0,100);setMadeHistory(next);lsSet("made_history",next);}
-  function recipeText(d){return d.name+"\n\nIngredients\n- "+d.ingredients.join("\n- ")+"\n\nMethod\n"+d.machine.map(function(x,i){return (i+1)+". "+x;}).join("\n");}
+  function toggleRecipeCheck(group,index){
+    var next={ingredients:Object.assign({},recipeChecks.ingredients),steps:Object.assign({},recipeChecks.steps)};
+    next[group][index]=!next[group][index];setRecipeChecks(next);
+  }
+  async function toggleWakeLock(){
+    if(wakeLock){try{await wakeLock.release();}catch(e){}setWakeLock(null);setWakeActive(false);return;}
+    if(!("wakeLock" in navigator)){alert("Screen wake-lock is not supported by this browser.");return;}
+    try{var lock=await navigator.wakeLock.request("screen");setWakeLock(lock);setWakeActive(true);lock.addEventListener("release",function(){setWakeLock(null);setWakeActive(false);});}
+    catch(e){alert("The screen could not be kept awake. Check your browser permissions.");}
+  }
+  function exportData(){
+    var data={};for(var i=0;i<localStorage.length;i++){var key=localStorage.key(i);if(key&&key.indexOf("nlc_")===0)data[key]=localStorage.getItem(key);}
+    var blob=new Blob([JSON.stringify({app:"Ninja Luxe Café",version:1,exportedAt:new Date().toISOString(),data:data},null,2)],{type:"application/json"});
+    var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ninja-luxe-cafe-backup.json";a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);setDataMessage("Backup downloaded.");
+  }
+  function importData(file){
+    if(!file)return;var reader=new FileReader();reader.onload=function(){try{var pack=JSON.parse(reader.result);if(!pack||pack.app!=="Ninja Luxe Café"||!pack.data)throw new Error("invalid");var old=[];for(var i=0;i<localStorage.length;i++){var key=localStorage.key(i);if(key&&key.indexOf("nlc_")===0)old.push(key);}old.forEach(function(k){localStorage.removeItem(k);});Object.keys(pack.data).forEach(function(k){if(k.indexOf("nlc_")===0)localStorage.setItem(k,pack.data[k]);});setDataMessage("Backup restored. Reloading…");setTimeout(function(){location.reload();},700);}catch(e){setDataMessage("That file is not a valid Luxe Café backup.");}};reader.readAsText(file);
+  }
+  function scaleNumber(value,factor){
+    var scaled=value*factor;
+    return Math.abs(scaled-Math.round(scaled))<0.001?String(Math.round(scaled)):String(Math.round(scaled*10)/10);
+  }
+  function scaledIngredient(ing,d){
+    var factor=recipeServings/(d.serves||1);
+    if(factor===1) return ing;
+    return ing.replace(/(^|\s)(\d+(?:\.\d+)?)(?=\s?(?:ml|g|oz|fl oz|tbsp|tsp|cup|cups|shot|shots|scoop|scoops|piece|pieces)\b)/gi,function(_,lead,n){return lead+scaleNumber(Number(n),factor);});
+  }
+  function recipeText(d){return d.name+" — "+recipeServings+" serving"+(recipeServings===1?"":"s")+"\n\nIngredients\n- "+d.ingredients.map(function(x){return scaledIngredient(x,d);}).join("\n- ")+"\n\nMethod\n"+d.machine.map(function(x,i){return (i+1)+". "+x;}).join("\n");}
   function shareRecipe(d){var data={title:d.name,text:recipeText(d)};if(navigator.share){navigator.share(data).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(data.text);alert("Recipe copied to clipboard");}}
-  function displayIngredient(ing){
-    var out=ing;
+  function displayIngredient(ing,d){
+    var out=scaledIngredient(ing,d);
     if(prefs.milk==="Oat") out=out.replace(/whole milk|semi-skimmed milk|Milk/gi,"oat milk");
     if(prefs.milk==="Coconut") out=out.replace(/whole milk|semi-skimmed milk|Milk/gi,"coconut milk");
     if(prefs.units==="imperial") out=out.replace(/(\d+)ml/g,function(_,n){return (Number(n)/28.413).toFixed(1)+" fl oz";}).replace(/(\d+)g/g,function(_,n){return (Number(n)/28.35).toFixed(1)+" oz";});
@@ -1087,6 +1138,9 @@ function App() {
   // ── DRINKS LIST ───────────────────────────────────────────────────────────
   function DrinksPage() {
     if (selDrink) return DrinkDetail();
+    var recentIds=[];madeHistory.forEach(function(h){if(recentIds.indexOf(h.drinkId)<0)recentIds.push(h.drinkId);});
+    var recentDrinks=recentIds.slice(0,5).map(function(id){return DRINKS.find(function(d){return d.id===id;});}).filter(Boolean);
+    var pinnedDrinks=favs.map(function(id){return DRINKS.find(function(d){return d.id===id;});}).filter(Boolean).slice(0,6);
     return (
       <div style={{flex:1,width:"100%",maxWidth:900,margin:"0 auto",padding:"14px 12px",paddingBottom:90}} className="fi">
         {/* Search */}
@@ -1115,6 +1169,14 @@ function App() {
             </button>
           </div>
         </div>
+        {recentDrinks.length>0&&<div style={{marginBottom:14}}>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:7}}>🕒 Recently made</div>
+          <div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:3}}>{recentDrinks.map(function(d){return <button key={d.id} onClick={function(){openDrink(d);}} style={{minWidth:138,background:t.card,border:"1px solid "+t.cardBor,borderRadius:11,padding:"9px 10px",textAlign:"left"}}><div style={{fontSize:18}}>{d.emoji}</div><div style={{fontSize:11,fontWeight:800,color:t.txt,marginTop:4}}>{d.name}</div><div style={{fontSize:9,color:t.sub,marginTop:2}}>{d.time} min · {d.intensity}</div></button>;})}</div>
+        </div>}
+        {pinnedDrinks.length>0&&<div style={{marginBottom:14}}>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:7}}>★ Pinned favourites</div>
+          <div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:3}}>{pinnedDrinks.map(function(d){return <button key={d.id} onClick={function(){openDrink(d);}} style={{minWidth:138,background:t.accDim,border:"1px solid "+t.acc+"55",borderRadius:11,padding:"9px 10px",textAlign:"left"}}><div style={{fontSize:18}}>{d.emoji}</div><div style={{fontSize:11,fontWeight:800,color:t.txt,marginTop:4}}>{d.name}</div><div style={{fontSize:9,color:t.acc,marginTop:2}}>Pinned recipe</div></button>;})}</div>
+        </div>}
         {/* Advanced filters */}
         <div style={{marginBottom:12}}>
           <div style={{display:"flex",gap:8}}>
@@ -1211,7 +1273,9 @@ function App() {
           {filteredDrinks.length===0&&(
             <div style={{textAlign:"center",padding:40,color:t.sub}}>
               <div style={{fontSize:32,marginBottom:8}}>☕</div>
-              <div style={{fontSize:14}}>No drinks found</div>
+              <div style={{fontSize:14,fontWeight:800,color:t.txt,marginBottom:4}}>No drinks match those choices</div>
+              <div style={{fontSize:11,lineHeight:1.5,marginBottom:12}}>Try removing a filter, changing the category or searching for another ingredient.</div>
+              <button onClick={resetDiscovery} style={{background:t.acc,color:"#FFF",border:"none",borderRadius:9,padding:"9px 15px",fontSize:11,fontWeight:800}}>Reset search and filters</button>
             </div>
           )}
         </div>
@@ -1295,9 +1359,13 @@ function App() {
           <div style={{fontSize:13,color:t.bod,lineHeight:1.6,marginBottom:10}}>{d.desc}</div>
           <div style={{display:"flex",justifyContent:"center",gap:16,flexWrap:"wrap"}}>
             <span style={{fontSize:12,color:t.sub}}>⏱ {d.time} min</span>
-            <span style={{fontSize:12,color:t.sub}}>👤 {d.serves} serving</span>
+            <span style={{fontSize:12,color:t.sub}}>👤 {recipeServings} serving{recipeServings===1?"":"s"}</span>
             <span style={{fontSize:12,color:t.sub}}>📶 {d.difficulty}</span>
             {d.size&&<span style={{fontSize:12,color:t.sub}}>🥤 {d.size}</span>}
+          </div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:6,marginTop:12}}>
+            <span style={{fontSize:10,fontWeight:800,color:t.sub,marginRight:2}}>MAKE</span>
+            {[1,2,4].map(function(n){var active=recipeServings===n;return <button key={n} onClick={function(){setRecipeServings(n);setRecipeChecks({ingredients:{},steps:{}});}} style={{minWidth:40,background:active?t.acc:t.btn,color:active?"#FFF":t.txt,border:"1px solid "+(active?t.acc:t.btnBor),borderRadius:16,padding:"5px 9px",fontSize:11,fontWeight:800}}>{n}</button>;})}
           </div>
         </div>
 
@@ -1315,31 +1383,32 @@ function App() {
           {prefs.decaf&&<div style={{fontSize:10,color:t.acc,marginTop:8}}>🌙 Decaf preference active — use decaffeinated beans for this recipe.</div>}
         </div>
 
-        <div style={{display:"flex",gap:8,marginBottom:14}}>
+        <div style={{display:"flex",gap:8,marginBottom:8}}>
           <button onClick={function(){logMade(d);}} style={{flex:1,background:t.acc,color:"#FFF",border:"1px solid "+t.acc,borderRadius:10,padding:"9px 6px",fontSize:11,fontWeight:800}}>✓ I made this</button>
           <button onClick={function(){shareRecipe(d);}} style={{flex:1,background:t.btn,color:t.txt,border:"1px solid "+t.btnBor,borderRadius:10,padding:"9px 6px",fontSize:11,fontWeight:700}}>↗ Share / copy</button>
         </div>
+        <button onClick={toggleWakeLock} style={{width:"100%",marginBottom:14,background:wakeActive?t.accDim:t.btn,color:wakeActive?t.acc:t.txt,border:"1px solid "+(wakeActive?t.acc:t.btnBor),borderRadius:10,padding:"9px",fontSize:11,fontWeight:800}}>{wakeActive?"☀️ Screen will stay awake — tap to stop":"☀️ Keep screen awake while making"}</button>
 
         {/* Ingredients */}
         <Acc sid="ingredients" icon="🧾" label="Ingredients">
           {d.ingredients.map(function(ing,i){return(
-            <div key={i} style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:8,padding:"6px 0",borderBottom:"1px solid "+t.cardBor}}>
-              <span style={{color:t.acc,fontSize:16,flexShrink:0,marginTop:1}}>•</span>
-              <span style={{fontSize:13,color:t.txt}}>{displayIngredient(ing)}</span>
-            </div>
+            <button key={i} onClick={function(){toggleRecipeCheck("ingredients",i);}} style={{display:"flex",width:"100%",alignItems:"flex-start",gap:9,marginBottom:5,padding:"7px 0",background:"none",border:"none",borderBottom:"1px solid "+t.cardBor,textAlign:"left"}}>
+              <span style={{width:20,height:20,borderRadius:5,border:"1px solid "+(recipeChecks.ingredients[i]?t.acc:t.cardBor),background:recipeChecks.ingredients[i]?t.acc:"transparent",color:"#FFF",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,flexShrink:0}}>{recipeChecks.ingredients[i]?"✓":""}</span>
+              <span style={{fontSize:13,color:recipeChecks.ingredients[i]?t.sub:t.txt,textDecoration:recipeChecks.ingredients[i]?"line-through":"none",lineHeight:1.5}}>{displayIngredient(ing,d)}</span>
+            </button>
           );})}
         </Acc>
 
         {/* Method */}
         <Acc sid="method" icon="📋" label="How to make it">
           {d.machine.map(function(step,i){return(
-            <div key={i} style={{display:"flex",gap:12,marginBottom:12,alignItems:"flex-start"}}>
-              <div style={{width:24,height:24,borderRadius:12,background:t.acc,color:"#FFF",
+            <button key={i} onClick={function(){toggleRecipeCheck("steps",i);}} style={{display:"flex",width:"100%",gap:12,marginBottom:12,alignItems:"flex-start",background:"none",border:"none",textAlign:"left"}}>
+              <div style={{width:24,height:24,borderRadius:12,background:recipeChecks.steps[i]?t.grn:t.acc,color:"#FFF",
                 display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,flexShrink:0}}>
-                {i+1}
+                {recipeChecks.steps[i]?"✓":i+1}
               </div>
-              <div style={{fontSize:13,color:t.txt,lineHeight:1.6,flex:1}}>{step}</div>
-            </div>
+              <div style={{fontSize:13,color:recipeChecks.steps[i]?t.sub:t.txt,lineHeight:1.6,flex:1,textDecoration:recipeChecks.steps[i]?"line-through":"none"}}>{step}</div>
+            </button>
           );})}
         </Acc>
 
@@ -1743,14 +1812,31 @@ function App() {
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:10}}>
             <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>MEASUREMENTS</div><select value={prefs.units} onChange={function(e){updatePref("units",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option value="metric">Metric</option><option value="imperial">Imperial</option></select></label>
             <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>PREFERRED MILK</div><select value={prefs.milk} onChange={function(e){updatePref("milk",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option>Any</option><option>Dairy</option><option>Oat</option><option>Coconut</option></select></label>
+            <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>COFFEE STRENGTH</div><select value={prefs.coffeeStrength} onChange={function(e){updatePref("coffeeStrength",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option>Any</option><option>Mild</option><option>Medium</option><option>Strong</option></select></label>
+            <label><div style={{fontSize:9,fontWeight:800,color:t.lbl,marginBottom:4}}>TEXT SIZE</div><select value={prefs.textSize||"standard"} onChange={function(e){updatePref("textSize",e.target.value);}} style={{width:"100%",background:t.inp,border:"1px solid "+t.inpBor,color:t.inpTxt,borderRadius:8,padding:8,fontSize:11}}><option value="standard">Standard</option><option value="large">Large</option><option value="extra">Extra large</option></select></label>
           </div>
           {[
             ["decaf","Prefer decaf","Recipes remain the same; use decaffeinated beans"],
             ["hideCocktails","Hide cocktails","Remove alcoholic drinks from browsing and recommendations"],
-            ["largeText","Larger display","Increase the overall app display size"],
             ["reducedMotion","Reduce motion","Disable interface animations"],
             ["highContrast","Higher contrast","Increase visual contrast throughout the app"]
           ].map(function(p){return <label key={p[0]} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderTop:"1px solid "+t.cardBor,cursor:"pointer"}}><input type="checkbox" checked={!!prefs[p[0]]} onChange={function(e){updatePref(p[0],e.target.checked);}}/><div><div style={{fontSize:11,fontWeight:700,color:t.txt}}>{p[1]}</div><div style={{fontSize:10,color:t.sub,lineHeight:1.4}}>{p[2]}</div></div></label>;})}
+        </div>
+
+        {/* Backup and restore */}
+        <div style={{background:t.card,border:"1px solid "+t.cardBor,borderRadius:14,padding:"12px 14px",marginTop:12,marginBottom:10}}>
+          <div style={{fontSize:12,fontWeight:800,color:t.txt,marginBottom:5}}>💾 Backup & restore</div>
+          <div style={{fontSize:10,color:t.sub,lineHeight:1.5,marginBottom:9}}>Save your favourites, notes, ratings, journal and preferences, then restore them on another device.</div>
+          <div style={{display:"flex",gap:8}}>
+            <button onClick={exportData} style={{flex:1,background:t.acc,color:"#FFF",border:"none",borderRadius:9,padding:"9px",fontSize:11,fontWeight:800}}>Export backup</button>
+            <button onClick={function(){document.getElementById("cafe-backup-file").click();}} style={{flex:1,background:t.btn,color:t.txt,border:"1px solid "+t.btnBor,borderRadius:9,padding:"9px",fontSize:11,fontWeight:800}}>Restore backup</button>
+            <input id="cafe-backup-file" type="file" accept="application/json,.json" onChange={function(e){importData(e.target.files[0]);}} style={{display:"none"}}/>
+          </div>
+          {dataMessage&&<div role="status" style={{fontSize:10,color:dataMessage.indexOf("not a valid")>=0?"#D86A5A":t.acc,marginTop:7}}>{dataMessage}</div>}
+        </div>
+
+        <div style={{background:isOnline?t.accDim:t.card,border:"1px solid "+(isOnline?t.acc+"55":t.cardBor),borderRadius:12,padding:"10px 12px",marginBottom:10,fontSize:11,color:t.bod,lineHeight:1.5}}>
+          {!isOnline?"📴 You are offline. Saved recipes and app features remain available.":offlineReady?"✓ Offline-ready: the app and recipes are saved for use without a connection.":"Preparing the app for offline use…"}
         </div>
 
         {/* Add to home screen */}
@@ -1787,8 +1873,9 @@ function App() {
   else if (tab==="log")    pageContent = LogPage();
   else if (tab==="about")  pageContent = AboutPage();
 
+  var textZoom=prefs.textSize==="extra"?1.16:prefs.textSize==="large"?1.08:1;
   return(
-    <div className={prefs.reducedMotion?"reduce-motion":""} style={{background:t.app,minHeight:"100vh",display:"flex",flexDirection:"column",color:t.txt,transition:"background 0.25s",zoom:prefs.largeText?1.08:1,filter:prefs.highContrast?"contrast(1.16)":"none"}}>
+    <div className={prefs.reducedMotion?"reduce-motion":""} style={{background:t.app,minHeight:"100vh",display:"flex",flexDirection:"column",color:t.txt,transition:"background 0.25s",zoom:textZoom,filter:prefs.highContrast?"contrast(1.16)":"none"}}>
       {header}
       {pageContent}
       {DrinkPicker()}
@@ -1799,14 +1886,14 @@ function App() {
         {NAV.map(function(item){
           var active = tab===item.id;
           return(
-            <button key={item.id} onClick={function(){
+            <button key={item.id} aria-label={item.label} aria-current={active?"page":undefined} onClick={function(){
               setTab(item.id);
               if (item.id!=="drinks") setSelDrink(null);
             }}
-              style={{flex:1,padding:"8px 0 10px",background:"none",border:"none",cursor:"pointer",
-                display:"flex",flexDirection:"column",alignItems:"center",gap:3}}>
+              style={{flex:1,minHeight:54,padding:"8px 0 10px",background:active?t.accDim:"none",border:"none",borderTop:"2px solid "+(active?t.navAct:"transparent"),cursor:"pointer",
+                display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:3}}>
               <span style={{fontSize:18,lineHeight:1}}>{item.emoji}</span>
-              <span style={{fontSize:9,fontWeight:active?700:400,color:active?t.navAct:t.navTxt,letterSpacing:"0.3px"}}>
+              <span style={{fontSize:10,fontWeight:active?800:600,color:active?t.navAct:t.navTxt,letterSpacing:"0.2px"}}>
                 {item.label}
               </span>
             </button>
