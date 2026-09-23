@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Luxe Café">
   <meta name="theme-color" content="#1A0A00">
   <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMUEwQTAwIi8+PHRleHQgeD0iOTYiIHk9IjEyOCIgZm9udC1zaXplPSIxMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcHBsZSBDb2xvciBFbW9qaSxTZWdvZSBVSSBFbW9qaSxzYW5zLXNlcmlmIj7imJU8L3RleHQ+PC9zdmc+">
@@ -14,7 +14,8 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:100%;}
     html,body,#root{height:100%;background:#1A0A00;}
-    body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;color:#F0F0F0;overscroll-behavior-y:contain;}
+    html{scroll-padding-top:72px;overscroll-behavior-y:none;}
+    body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;color:#F0F0F0;overscroll-behavior-y:none;}
     #root{min-height:100vh;}
     input:focus,textarea:focus{outline:none}
     ::-webkit-scrollbar{width:3px;}
@@ -888,7 +889,7 @@ function App() {
   var s12=useState(false);    var pickerOpen=s12[0]; var setPickerOpen=s12[1];
   var s13=useState({temp:null,style:null,intensity:null}); var picker=s13[0]; var setPicker=s13[1];
   var s14=useState(false);    var filtersOpen=s14[0]; var setFiltersOpen=s14[1];
-  var s15=useState({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false}); var filters=s15[0]; var setFilters=s15[1];
+  var s15=useState({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false,official:false}); var filters=s15[0]; var setFilters=s15[1];
   var emptyBean={bean:"",roaster:"",roast:"Medium",grind:"",dose:"18",yield:"36",seconds:"",rating:"👍",notes:""};
   var s16=useState([]);       var beanLogs=s16[0]; var setBeanLogs=s16[1];
   var s17=useState(false);    var beanFormOpen=s17[0]; var setBeanFormOpen=s17[1];
@@ -918,6 +919,15 @@ function App() {
   useEffect(function(){
     lsSet("theme", themeMode);
   }, [themeMode]);
+
+  // Always start a newly selected area or recipe at the top. The second frame
+  // handles iOS Safari after its address bar has finished resizing the viewport.
+  useEffect(function(){
+    window.scrollTo(0,0);
+    document.documentElement.scrollTop=0;
+    document.body.scrollTop=0;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){window.scrollTo(0,0);});});
+  }, [tab, selDrink]);
 
   function openDrink(drink) {
     setSelDrink(drink);
@@ -1008,14 +1018,15 @@ function App() {
     var matchTexture = filters.texture === "all" || d.texture === filters.texture;
     var matchBrew = filters.brew === "all" || d.brewStyle === filters.brew;
     var matchFav = !filters.favs || favs.indexOf(d.id)>=0;
+    var matchOfficial = !filters.official || d.official===true;
     var matchPantry = !pantryOnly || (d.ingredientTags||[]).every(function(x){return pantry.indexOf(x)>=0;});
     var matchPrefs = !prefs.hideCocktails || d.cat!=="cocktail";
-    return matchCat && matchQ && matchTemp && matchIntensity && matchSweet && matchTexture && matchBrew && matchFav && matchPantry && matchPrefs;
+    return matchCat && matchQ && matchTemp && matchIntensity && matchSweet && matchTexture && matchBrew && matchFav && matchOfficial && matchPantry && matchPrefs;
   }).slice().sort(function(a,b){return a.name.localeCompare(b.name);});
-  var activeFilterCount = Object.keys(filters).filter(function(k){return k==="favs"?filters[k]:filters[k]!=="all";}).length;
+  var activeFilterCount = Object.keys(filters).filter(function(k){return typeof filters[k]==="boolean"?filters[k]:filters[k]!=="all";}).length;
 
   function updateFilter(key,value){var next=Object.assign({},filters);next[key]=value;setFilters(next);}
-  function clearFilters(){setFilters({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false});}
+  function clearFilters(){setFilters({temp:"all",intensity:"all",sweetness:"all",texture:"all",brew:"all",favs:false,official:false});}
 
   function updateBean(key,value){var next=Object.assign({},beanDraft);next[key]=value;setBeanDraft(next);}
   function saveBeanLog(){
@@ -1040,8 +1051,9 @@ function App() {
 
   // ── HEADER ────────────────────────────────────────────────────────────────
   var header = (
-    <div style={{background:t.hdrBg,borderBottom:"1px solid "+t.hdrBor,position:"sticky",top:0,zIndex:30,
-      paddingTop:"max(12px,env(safe-area-inset-top,12px))",paddingLeft:16,paddingRight:16,paddingBottom:12}}>
+    <div style={{background:t.hdrBg,borderBottom:"1px solid "+t.hdrBor,position:"sticky",top:0,zIndex:100,
+      paddingTop:"calc(12px + env(safe-area-inset-top, 0px))",paddingLeft:"max(16px,env(safe-area-inset-left,0px))",paddingRight:"max(16px,env(safe-area-inset-right,0px))",paddingBottom:12,
+      WebkitTransform:"translateZ(0)",transform:"translateZ(0)",isolation:"isolate",boxShadow:"0 1px 8px rgba(0,0,0,0.18)"}}>
       <div style={{maxWidth:900,margin:"0 auto",width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <div style={{display:"flex",alignItems:"center",gap:10}}>
           {selDrink&&tab==="drinks" ? (
@@ -1154,6 +1166,12 @@ function App() {
               </button>
             );
           })}
+          <button onClick={function(){updateFilter("official",!filters.official);}}
+            style={{background:filters.official?t.acc:"none",color:filters.official?"#FFF":t.sub,
+              border:"1px solid "+(filters.official?t.acc:t.cardBor),borderRadius:20,
+              padding:"5px 12px",fontSize:12,fontWeight:filters.official?700:400}}>
+            📖 Official only
+          </button>
         </div>
         <div style={{fontSize:11,color:t.sub,margin:"-6px 2px 10px"}}>{filteredDrinks.length} {filteredDrinks.length===1?"drink":"drinks"} found</div>
         {/* Drink cards */}
